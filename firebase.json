@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "dashboardKPI",
+      "public": "dist/dashboardKPI",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

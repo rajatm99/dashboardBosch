@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "dashboard-864fb": {
+      "hosting": {
+        "dashboardKPI": [
+          "dashboard-864fb"
+        ]
+      }
+    }
+  }
+}
