@@ -9,12 +9,14 @@ import { environment } from 'src/environments/environment';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { MainBodyComponent } from './main-body/main-body.component';
+import { KpiComponent } from './kpi/kpi.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    MainBodyComponent
+    MainBodyComponent,
+    KpiComponent
   ],
   imports: [
     BrowserModule,
