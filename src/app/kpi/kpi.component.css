@@ -2,9 +2,26 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background-color: aqua;
+   
+
     
 }
-.kpiblock{
 
+.kpiheader{
+    color: #000099;
+    font-weight:bolder;
+    text-align: center;
+    margin:auto;
+    
+}
+.subscriptionButton{
+    margin: 5px;;
+}
+.kpiblock{
+    border-style: solid;
+    border-radius: 8%;
+    border-width: 1px;
+    border-color: #F0F0F0;
+    background-color: #F5F5F5;
+   
 }
