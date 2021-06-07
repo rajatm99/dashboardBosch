@@ -1,0 +1,59 @@
+{
+    
+    "customers":[
+        {
+            "id":"c1",
+            "name":"customerA",
+            "email":"customerA@gmail.com",
+            "address":"address of customerA",
+            "company":"company of customerA"
+           
+
+        },{
+            "id":"c2",
+            "name":"customerB",
+            "email":"customerB@gmail.com",
+            "address":"address of customerB",
+            "company":"company of customerB"
+
+        },{ "id":"c3",
+            "name":"customerC",
+            "email":"customerC@gmail.com",
+            "address":"address of customerC",
+            "company":"company of customerC"
+
+        },
+        { "id":"c4",
+            "name":"customerD",
+            "email":"customerD@gmail.com",
+            "address":"address of customerD",
+            "company":"company of customerD"
+
+        }
+    ],
+    "device":[
+        {
+            "id":"d1",
+            "name":"deviceA"
+        },
+        {
+            "id":"d2",
+            "name":"deviceB"
+        }
+     
+    ],
+    "package":[
+        {
+            "id":"p1",
+            "name":"packageA"
+        },
+        {
+            "id":"p2",
+            "name":"packageB"
+        },
+        {
+            "id":"p3",
+            "name":"packageC"
+        }
+    ]
+}
