@@ -1,0 +1,28 @@
+{
+   
+    "customers":[
+        {
+            "id":"1",
+            "name":"customerA",
+            "email":"customerA@gmail.com",
+            "address":"address of customerA",
+            "company":"company of customerA"
+           
+
+        },{
+            "id":"2",
+            "name":"customerB",
+            "email":"customerB@gmail.com",
+            "address":"address of customerB",
+            "company":"company of customerB"
+
+        },{ "id":"3",
+            "name":"customerC",
+            "email":"customerC@gmail.com",
+            "address":"address of customerC",
+            "company":"company of customerC"
+
+        }
+    ]
+    
+}

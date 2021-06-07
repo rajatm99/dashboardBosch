@@ -1,0 +1,57 @@
+{
+    "kpi":{
+        "totalsales":"210",
+        "salesgrowth":"10%",
+        "customercount":"3",
+        "salestarget":"50%",
+        "qualityindex":"8",
+        "notification":{},
+        "subscription":{
+            "garce":"130",
+            "today":"2",
+            "firstweek":"4",
+            "secondweek":"16"
+        },
+        "deviceactive":"150"
+    },
+    "customers":[
+        {
+            "id":"1",
+            "name":"customerA",
+            "email":"customerA@gmail.com",
+            "address":"address of customerA",
+            "company":"company of customerA"
+           
+
+        },{
+            "id":"2",
+            "name":"customerB",
+            "email":"customerB@gmail.com",
+            "address":"address of customerB",
+            "company":"company of customerB"
+
+        },{ "id":"3",
+            "name":"customerC",
+            "email":"customerC@gmail.com",
+            "address":"address of customerC",
+            "company":"company of customerC"
+
+        }
+    ],
+    "devicesales":{
+        "toatalsales":"210",
+        "details":[
+            {
+                "devvicename":"device1",
+                "sales":"100"
+            },
+            {
+                "devvicename":"device2",
+                "sales":"50"
+            },{
+                "devvicename":"device3",
+                "sales":"60"
+            }
+        ]
+    }
+}

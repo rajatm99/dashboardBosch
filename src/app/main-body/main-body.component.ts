@@ -9,12 +9,13 @@ import {AngularFireDatabase, AngularFireList} from 'angularfire2/database'
 export class MainBodyComponent implements OnInit {
 
   constructor(db : AngularFireDatabase) {
-    db.list('/customers').snapshotChanges().forEach(snapshot =>{
-      console.log(snapshot);
-    });
+    // db.list('/customers').snapshotChanges().forEach(snapshot =>{
+    //   console.log(snapshot);
+    // });
    }
 
   ngOnInit(): void {
   }
 
 }
+  
