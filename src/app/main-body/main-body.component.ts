@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AngularFireDatabase, AngularFireList} from 'angularfire2/database'
+
 
 @Component({
   selector: 'app-main-body',
@@ -8,10 +8,8 @@ import {AngularFireDatabase, AngularFireList} from 'angularfire2/database'
 })
 export class MainBodyComponent implements OnInit {
 
-  constructor(db : AngularFireDatabase) {
-    // db.list('/customers').snapshotChanges().forEach(snapshot =>{
-    //   console.log(snapshot);
-    // });
+  constructor() {
+  
    }
 
   ngOnInit(): void {

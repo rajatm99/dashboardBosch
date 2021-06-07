@@ -1,4 +1,28 @@
-<p>saleschart works!</p>
-<div id="divChart">
+<div class="filterDiv">
+    <div class="filterButton">
+        <button>week</button>
+        <button>Month</button>
+        <button>Year</button>
+    </div>
+
+    <div class="filterTab">
+        <form>
+            <select>
+                <option value="allpackage"> All Package</option>
+                <!-- <option  *ngFor="let package of salesData" value={{package.packageName}}>{{package.packageName}}</option> -->
+            </select>
+        </form>
+    </div>
+    <div class="filterTab">
+        <form>
+            <select>
+                <option value="alldevice"> All Device</option>
+            </select>
+        </form>
+
+    </div>
+</div>
+
+<div id="chartDiv">
     <canvas id="salesChart"></canvas>
 </div>
