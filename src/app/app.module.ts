@@ -17,6 +17,12 @@ import { CustomerchartComponent } from './main-body/customerchart/customerchart.
 import { ServicechartComponent } from './main-body/servicechart/servicechart.component';
 import { FooterComponent } from './footer/footer.component';
 
+
+import {DevicetestService} from './services/devicetest.service';
+import { AppRoutingModule } from './app-routing.module';
+import { CustomertableComponent } from './main-body/customertable/customertable.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,16 +33,19 @@ import { FooterComponent } from './footer/footer.component';
     SaleschartComponent,
     CustomerchartComponent,
     ServicechartComponent,
-    FooterComponent
+    FooterComponent,
+    CustomertableComponent,
+   
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   
-  providers: [],
+  providers: [DevicetestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
