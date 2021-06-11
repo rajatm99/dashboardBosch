@@ -37,9 +37,9 @@ export class SaleschartComponent implements OnInit {
     this.pack=packg
     if(this.timeSet=="year"){
       this.setYearlyChart()
-    }else if(this.timeSet="month"){
+    }else if(this.timeSet=="month"){
       this.setMonthlyChart()
-    }else if(this.timeSet="week"){
+    }else if(this.timeSet=="week"){
       this.setWeeklyChart()
     }
   }
