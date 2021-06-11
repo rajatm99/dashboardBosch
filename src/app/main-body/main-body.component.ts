@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 
+
 @Component({
   selector: 'app-main-body',
   templateUrl: './main-body.component.html',
@@ -13,6 +14,10 @@ export class MainBodyComponent implements OnInit {
    }
 
   ngOnInit(): void {
+  }
+
+  myComponent(){
+    console.log("Rajat Component")
   }
 
 }
