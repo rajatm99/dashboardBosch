@@ -17,8 +17,9 @@
 
 .sales-testDiv{
     height: 30%;
-    width: 77%;
+    width: 100%;
     display: flex;
+
 }
 
 .deviceDiv{
@@ -29,9 +30,11 @@
 .salesChart{
     width: 50%;
     padding: 4%;
+
 }
 
 .customerChart{
     width: 50%;
     padding: 4%;
+
 }
