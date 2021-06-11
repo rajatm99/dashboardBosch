@@ -11,6 +11,7 @@ export class SaleschartComponent implements OnInit {
   constructor(private saleService: SalesService) { } 
   public chartData : any[]
   public chartLable : any[]
+  public chart : any
   packageList = []
   timeSet = "year"
   pack="packageA"
@@ -67,6 +68,7 @@ export class SaleschartComponent implements OnInit {
                     }
                   }
                   data.push(temp)
+                  temp=0
                 }
                 break 
               }  
@@ -180,7 +182,10 @@ export class SaleschartComponent implements OnInit {
   }
 
   public setChart(data,label){
-    var chart = new Chart('salesChart', {
+    if(this.chart){
+      this.chart.destroy()
+    }
+      this.chart = new Chart('salesChart', {
       type: 'line',
         options:{
           legend: {
