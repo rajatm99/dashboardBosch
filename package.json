@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "server:abhishek": "json-server --watch db/abhishek.json --port 8000",
-    "server:rajat": "json-server db/rajat.json --port 8000"
+    "server:rajat": "json-server --watch db/rajat.json --port 9000"
   },
   "private": true,
   "dependencies": {
@@ -23,7 +23,7 @@
     "@angular/platform-browser-dynamic": "~11.2.8",
     "@angular/router": "~11.2.8",
     "angularfire2": "^5.4.2",
-    "chart.js": "^2.9.4",
+    "chart.js": "^2.8.0",
     "firebase": ">= 5.5.7 <8",
     "json-server": "^0.16.3",
     "ng2-charts": "^2.2.3",

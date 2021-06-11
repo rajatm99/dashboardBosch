@@ -14,7 +14,7 @@ export class CustomerchartComponent implements OnInit {
   labels = []
   deviceNum = []
   testNum = []
-  dataset = []
+  dataset :any
 
   constructor(
     private customerService: CustomerService,
@@ -23,7 +23,7 @@ export class CustomerchartComponent implements OnInit {
 
   ngOnInit(): void {
     this.initializeChart()
-
+   
   }
 
 
@@ -114,30 +114,24 @@ export class CustomerchartComponent implements OnInit {
       }
     }
   }
-  // function to intialize chart
+ 
   initializeChart() {
     this.devicetestService.getTestData().subscribe((data: any) => {
-      console.log(data);
-      data.forEach(customer => {
-
-        let devicecount = 0
-        let testcount = 0
-        customer.data.forEach(device => {
-          devicecount += 1
-          device.data.forEach(year => {
-            year.testconducted.forEach(testNumber => {
-              testcount += testNumber
-            });
-          });
-        });
-        this.labels.push(customer.customer)
-        this.deviceNum.push(devicecount)
-        this.testNum.push(testcount)
-        this.dataset.push({ customer: customer.customer, deviceNum: devicecount, testNum: testcount })
+      console.log(data); 
+     this.dataset= this.devicetestService.createChartData(data)
+     
+      
+      this.dataset.forEach(element => {
+    
+        
+      this.labels.push(element.customer)
+      this.deviceNum.push(element.deviceNum)
+      this.testNum.push(element.testNum)
+        
       });
-
-      console.log(this.labels, this.deviceNum, this.testNum);
-      console.log(this.dataset)
+     
+      
+    
 
       // chart configuration setup
 

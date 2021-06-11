@@ -1,1 +1,16 @@
 <p>customertable works!</p>
+<table id="customer">
+    <tr>
+        <th>Customer Id</th>
+        <th>Customer Name</th>
+        <th>Total Device</th>
+        <th>Total Tesst</th>
+    </tr>
+
+    <tr *ngFor='let customer of dataset' > 
+        <td (click)='showCustomer(customer.customerId)'>{{customer.customerId}}</td>
+        <td (click)='showCustomer(customer.customerId)'>{{customer.customer}}</td>
+        <td (click)='showCustomer(customer.customerId)'>{{customer.deviceNum}}</td>
+        <td (click)='showCustomer(customer.customerId)'>{{customer.testNum}}</td>
+    </tr>
+</table>
