@@ -1,33 +1,34 @@
 {
-    
-    "customers":[
+     "customers":[
         {
             "id":"c1",
             "name":"customerA",
             "email":"customerA@gmail.com",
             "address":"address of customerA",
-            "company":"company of customerA"
-           
-
+            "company":"company of customerA",
+            "phone":"phone A"
         },{
             "id":"c2",
             "name":"customerB",
             "email":"customerB@gmail.com",
             "address":"address of customerB",
-            "company":"company of customerB"
+            "company":"company of customerB",
+            "phone":"phone B"
 
         },{ "id":"c3",
             "name":"customerC",
             "email":"customerC@gmail.com",
             "address":"address of customerC",
-            "company":"company of customerC"
+            "company":"company of customerC",
+            "phone":"phone C"
 
         },
         { "id":"c4",
             "name":"customerD",
             "email":"customerD@gmail.com",
             "address":"address of customerD",
-            "company":"company of customerD"
+            "company":"company of customerD",
+            "phone":"phone D"
 
         }
     ],
@@ -56,136 +57,45 @@
             "name":"packageC"
         }
     ],
-    "test":[
-        {
-            "id":"1",
-            "customerId":"c2",
-            "deviceId":"d1",
-            "data":[
-                {
-                    "year":"2018",
-                    "testconducted":[1,1,1,1,1,1,1,1,1,1,1,1]
-                },
-                {
-                    "year":"2019",
-                    "testconducted":[1,1,1,1,1,1,1,1,1,1,1,1]
-                },
-                {
-                    "year":"2020",
-                    "testconducted":[1,1,1,1,1,1,1,1,1,1,1,1]
-                }
-            ]
-        },
-        {   "id":"2",
-            "customerId":"c1",
-            "deviceId":"d1",
-            "data":[
-                {
-                    "year":"2018",
-                    "testconducted":[1,1,1,1,1,1,1,1,1,1,1,1]
-                },
-                {
-                    "year":"2019",
-                    "testconducted":[1,1,1,1,1,1,1,1,1,1,1,1]
-                },
-                {
-                    "year":"2020",
-                    "testconducted":[1,1,1,1,1,1,1,1,1,1,1,1]
-                }
-            ]
-        },
-        {   "id":"3",
-            "customerId":"c1",
-            "deviceId":"d2",
-            "data":[
-                {
-                    "year":"2018",
-                    "testconducted":[1,1,1,1,1,1,1,1,1,1,1,1]
-                },
-                {
-                    "year":"2019",
-                    "testconducted":[1,1,1,1,1,1,1,1,1,1,1,1]
-                },
-                {
-                    "year":"2020",
-                    "testconducted":[1,1,1,1,1,1,1,1,1,1,1,1]
-                }
-            ]
-        },
-        {   "id":"4",
-            "customerId":"c3",
-            "deviceId":"d1",
-            "data":[
-                {
-                    "year":"2018",
-                    "testconducted":[1,1,1,1,1,1,1,1,1,1,1,1]
-                },
-                {
-                    "year":"2019",
-                    "testconducted":[1,1,1,1,1,1,1,1,1,1,1,1]
-                },
-                {
-                    "year":"2020",
-                    "testconducted":[1,1,1,1,1,1,1,1,1,1,1,1]
-                }
-            ]
-        },
-        {   "id":"5",
-            "customerId":"c3",
-            "deviceId":"d2",
-            "data":[
-                {
-                    "year":"2018",
-                    "testconducted":[1,1,1,1,1,1,1,1,1,1,1,1]
-                },
-                {
-                    "year":"2019",
-                    "testconducted":[1,1,1,1,1,1,1,1,1,1,1,1]
-                },
-                {
-                    "year":"2020",
-                    "testconducted":[1,1,1,1,1,1,1,1,1,1,1,1]
-                }
-            ]
-        }
-    ],
-    "testdata":[
+     "testdata":[
         {   "customerId":"c1",
             "customer":"customerA",
             "data":[
-                {
+                {   "id":"d1-1",
                     "deviceId":"d1",
                     "device":"deviceA",
+                    "expiry":"expired",
                     "data":[
                         {   
                             "year":"2018",
-                            "testconducted":[1,1,1,1,1,1,1,1,1,1,1,1]
+                            "testconducted":50
                         },
                         {
                             "year":"2019",
-                            "testconducted":[1,1,1,1,1,1,1,1,1,1,1,1]
+                            "testconducted":40
                         },
                         {
                             "year":"2020",
-                            "testconducted":[1,1,1,1,1,1,1,1,1,1,1,1]
+                            "testconducted":20
                         }
                     ]
                 },
-                {
+                {   "id":"d2-1",
                     "device":"deviceB",
                     "deviceId":"d2",
+                    "expiry":"10dec2021",
                     "data":[
                         {
                             "year":"2018",
-                            "testconducted":[1,1,1,1,1,1,1,1,1,1,1,1]
+                            "testconducted":50
                         },
                         {
                             "year":"2019",
-                            "testconducted":[1,1,1,1,1,1,1,1,1,1,1,1]
+                            "testconducted":20
                         },
                         {
                             "year":"2020",
-                            "testconducted":[1,1,1,1,1,1,1,1,1,1,1,1]
+                            "testconducted":30
                         }
                     ]
                 }
@@ -194,20 +104,22 @@
         {   "customerId":"c2",
             "customer":"customerB",
             "data":[
-                 {  "deviceId":"d2",
+                 { "id":"d2-2",
+                    "deviceId":"d2",
                     "device":"deviceB",
+                    "expiry":"24Sep2021",
                     "data":[
                         {
                             "year":"2018",
-                            "testconducted":[1,1,1,1,1,1,1,1,1,1,1,1]
+                            "testconducted":233
                         },
                         {
                             "year":"2019",
-                            "testconducted":[1,1,1,1,1,1,1,1,1,1,1,1]
+                            "testconducted":122
                         },
                         {
                             "year":"2020",
-                            "testconducted":[1,1,1,1,1,1,1,1,1,1,1,1]
+                            "testconducted":286
                         }
                     ]
                 }
@@ -216,37 +128,23 @@
         {   "customerId":"c3",
             "customer":"customerC",
             "data":[
-                {   "deviceId":"d1",
-                    "device":"deviceA",
-                    "data":[
-                        {
-                            "year":"2018",
-                            "testconducted":[1,1,1,1,1,1,1,1,1,1,1,1]
-                        },
-                        {
-                            "year":"2019",
-                            "testconducted":[0,0,0,0,0,0,0,0,0,0,0,0]
-                        },
-                        {
-                            "year":"2020",
-                            "testconducted":[0,0,0,0,0,0,0,0,0,0,0,0]
-                        }
-                    ]
-                },
-                {   "deviceId":"d2",
+                
+                {  "id":"d2-3",
+                    "deviceId":"d2",
                     "device":"deviceB",
+                    "expiry":"expired",
                     "data":[
                         {
                             "year":"2018",
-                            "testconducted":[0,0,0,0,0,0,0,0,0,0,0,0]
+                            "testconducted":165
                         },
                         {
                             "year":"2019",
-                            "testconducted":[0,0,0,0,0,0,0,0,0,0,0,0]
+                            "testconducted":200
                         },
                         {
                             "year":"2020",
-                            "testconducted":[1,1,1,1,1,1,1,1,1,1,1,1]
+                            "testconducted":189
                         }
                     ]
                 }
@@ -255,39 +153,41 @@
         {   "customerId":"c4",
             "customer":"customerD",
             "data":[
-                {   "id":"A1",
+                {   "id":"d1-2",
                     "deviceId":"d1",
                     "device":"deviceA",
+                    "expiry":"expired",
                     "data":[
                         {
                             "year":"2018",
-                            "testconducted":[2,2,2,2,2,2,2,2,2,2,2,2]
+                            "testconducted":123
                         },
                         {
                             "year":"2019",
-                            "testconducted":[1,1,1,1,1,1,1,1,1,1,1,1]
+                            "testconducted":200
                         },
                         {
                             "year":"2020",
-                            "testconducted":[1,1,1,1,1,1,1,1,1,1,1,1]
+                            "testconducted":213
                         }
                     ]
                 },
-                {   "id":"A2",
+                {   "id":"d1-3",
                     "deviceId":"d1",
                     "device":"deviceA",
+                    "expiry":"15Aug2021",
                     "data":[
                         {
                             "year":"2018",
-                            "testconducted":[2,2,2,2,2,2,2,2,2,2,2,2]
+                            "testconducted":134
                         },
                         {
                             "year":"2019",
-                            "testconducted":[1,1,1,1,1,1,1,1,1,1,1,1]
+                            "testconducted":231
                         },
                         {
                             "year":"2020",
-                            "testconducted":[1,1,1,1,1,1,1,1,1,1,1,1]
+                            "testconducted":200
                         }
                     ]
                 }

@@ -21,6 +21,7 @@ import { FooterComponent } from './footer/footer.component';
 import {DevicetestService} from './services/devicetest.service';
 import { AppRoutingModule } from './app-routing.module';
 import { CustomertableComponent } from './main-body/customertable/customertable.component';
+import { CustomerDetailsComponent } from './main-body/customer-details/customer-details.component'
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { CustomertableComponent } from './main-body/customertable/customertable.
     ServicechartComponent,
     FooterComponent,
     CustomertableComponent,
+    CustomerDetailsComponent,
    
   ],
   imports: [

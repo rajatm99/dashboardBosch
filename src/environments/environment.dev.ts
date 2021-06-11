@@ -5,8 +5,11 @@ export const environment = {
         GET_SALES_DATA:'sales'
     },
     testdata:{
-        GET_TEST_DATA:'testdata',
+        GET_TEST_DATA:'testdata/',
         
+        },
+    CUSTOMER:{
+        GET_CUSTOMER:'customers/'
     }
 
 }

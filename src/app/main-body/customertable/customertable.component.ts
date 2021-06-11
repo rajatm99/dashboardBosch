@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DevicetestService } from '../../services/devicetest.service'
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'app-customertable',
@@ -6,10 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./customertable.component.css']
 })
 export class CustomertableComponent implements OnInit {
-
-  constructor() { }
+  dataset: any
+  constructor(
+    private deviceTestService: DevicetestService,
+    private router:Router) {}
 
   ngOnInit(): void {
+    this.createTableData()
   }
-
+createTableData(){
+  this.deviceTestService.getTestData().subscribe((data:any)=>{
+    this.dataset=this.deviceTestService.createChartData(data)
+   
+  })
+ 
+  
+}
+showCustomer(customerId){
+this.router.navigate(['/customers',customerId]);
+}
 }
