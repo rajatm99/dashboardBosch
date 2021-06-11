@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'chart.js'
 import { SalesService } from '../../services/sales.service'
@@ -10,12 +11,40 @@ export class SaleschartComponent implements OnInit {
   constructor(private saleService: SalesService) { } 
   public chartData : any[]
   public chartLable : any[]
+  packageList = []
+  timeSet = "year"
+  pack="packageA"
+  week="week"
+  month="month"
+  year="year"
   packA = "packageA"
   packB = "packageB"
   packC = "packageC"
   items = []
 
-  public setYearlyChart(pack){   
+  public setTime(time){
+    this.timeSet=time
+    if(this.timeSet=="year"){
+      this.setYearlyChart()
+    }else if(this.timeSet=="week"){
+      this.setWeeklyChart()
+    }else if(this.timeSet=="month"){
+      this.setMonthlyChart()    
+    }
+  }
+
+  public packageClick(packg){
+    this.pack=packg
+    if(this.timeSet=="year"){
+      this.setYearlyChart()
+    }else if(this.timeSet="month"){
+      this.setMonthlyChart()
+    }else if(this.timeSet="week"){
+      this.setWeeklyChart()
+    }
+  }
+
+  public setYearlyChart(){   
   
     this.saleService.getData("/saleinfo").subscribe(res => {
         var label = []
@@ -25,7 +54,7 @@ export class SaleschartComponent implements OnInit {
               var temp = 0
               var x = res[key]
               this.items.push(res[key])              
-              if(x.packageName == pack){
+              if(x.packageName == this.pack){
                 for(var i in x.sale){
                   // console.log("in")
                   // console.log(x.sale[i])
@@ -64,7 +93,7 @@ export class SaleschartComponent implements OnInit {
        
   }
 
-  public setWeeklyChart(pack){
+  public setWeeklyChart(){
     this.saleService.getData("/saleinfo").subscribe(res => {
       var label = []
       var data = []
@@ -74,7 +103,7 @@ export class SaleschartComponent implements OnInit {
             var temp = 0
             var x = res[key]
             this.items.push(res[key])              
-            if(x.packageName == pack){
+            if(x.packageName == this.pack){
               for(var i in x.sale){
                 // label.push(x.sale[i].year)
                 for(var j in x.sale[i].data){
@@ -113,7 +142,7 @@ export class SaleschartComponent implements OnInit {
 
   }
 
-  public setMonthlyChart(pack){
+  public setMonthlyChart(){
     this.saleService.getData("/saleinfo").subscribe(res => {
       var label = []
       var data = []
@@ -122,7 +151,7 @@ export class SaleschartComponent implements OnInit {
             var temp = 0
             var x = res[key]
             this.items.push(res[key])              
-            if(x.packageName == pack){
+            if(x.packageName == this.pack){
               for(var i in x.sale){
                 // console.log("in")
                 // console.log(x.sale[i])
@@ -174,13 +203,25 @@ export class SaleschartComponent implements OnInit {
     
   }
 
+  public getPackageList(){
+    this.saleService.getData("/package").subscribe(res =>{
+      for(let key in res){
+        console.log(res[key].name)
+        this.packageList.push(res[key].name)
+      }
+    })
+
+  }
+
  
 ngOnInit(): void {
 
   this.saleService.getData("/device").subscribe(res => {console.log(res)})
   console.log("ONNUM VANNILLE??") 
   // this.setChart()
-  this.setMonthlyChart("packageA")
+  this.getPackageList()
+  console.log(this.packageList)
+  this.setMonthlyChart()
 
   }
 

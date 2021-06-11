@@ -1,15 +1,18 @@
 <div class="filterDiv">
     <div class="filterButton">
-        <button (click)="setWeeklyChart(packA)">week</button>
-        <button (click)="setMonthlyChart(packA)">Month</button>
-        <button (click)="setYearlyChart(packA)">Year</button>
+        <button (click)="setTime(week)">week</button>
+        <button (click)="setTime(month)">Month</button>
+        <button (click)="setTime(year)">Year</button>
     </div>
 
     <div class="filterTab">
         <form>
-            <select>
+            <select (change)="packageClick($event.target.value)">
                 <option value="allpackage"> All Package</option>
-                <!-- <option  *ngFor="let package of salesData" value={{package.packageName}}>{{package.packageName}}</option> -->
+                <option  *ngFor="let package of packageList" 
+                        value={{package}}>
+                            {{package}}
+                </option>
             </select>
         </form>
     </div>
