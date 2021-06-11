@@ -65,6 +65,7 @@
                     "deviceId":"d1",
                     "device":"deviceA",
                     "expiry":"expired",
+                    "currentPackage":"packageA",
                     "data":[
                         {   
                             "year":"2018",
@@ -84,6 +85,7 @@
                     "device":"deviceB",
                     "deviceId":"d2",
                     "expiry":"10dec2021",
+                    "currentPackage":"packageB",
                     "data":[
                         {
                             "year":"2018",
@@ -108,6 +110,7 @@
                     "deviceId":"d2",
                     "device":"deviceB",
                     "expiry":"24Sep2021",
+                    "currentPackage":"packageD",
                     "data":[
                         {
                             "year":"2018",
@@ -133,6 +136,7 @@
                     "deviceId":"d2",
                     "device":"deviceB",
                     "expiry":"expired",
+                    "currentPackage":"packageA",
                     "data":[
                         {
                             "year":"2018",
@@ -157,6 +161,7 @@
                     "deviceId":"d1",
                     "device":"deviceA",
                     "expiry":"expired",
+                    "currentPackage":"packageC",
                     "data":[
                         {
                             "year":"2018",
@@ -176,6 +181,7 @@
                     "deviceId":"d1",
                     "device":"deviceA",
                     "expiry":"15Aug2021",
+                    "currentPackage":"packageB",
                     "data":[
                         {
                             "year":"2018",

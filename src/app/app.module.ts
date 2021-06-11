@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import {MatDialogModule } from '@angular/material/dialog';
+
 
 import { AngularFireModule } from 'angularfire2';              //Importing firebase module
 import {AngularFireDatabaseModule} from 'angularfire2/database';
@@ -21,7 +23,9 @@ import { FooterComponent } from './footer/footer.component';
 import {DevicetestService} from './services/devicetest.service';
 import { AppRoutingModule } from './app-routing.module';
 import { CustomertableComponent } from './main-body/customertable/customertable.component';
-import { CustomerDetailsComponent } from './main-body/customer-details/customer-details.component'
+import { CustomerDetailsComponent } from './main-body/customer-details/customer-details.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DevicePerformanceComponent } from './main-body/device-performance/device-performance.component'
 
 
 @NgModule({
@@ -37,6 +41,7 @@ import { CustomerDetailsComponent } from './main-body/customer-details/customer-
     FooterComponent,
     CustomertableComponent,
     CustomerDetailsComponent,
+    DevicePerformanceComponent,
    
   ],
   imports: [
@@ -44,7 +49,10 @@ import { CustomerDetailsComponent } from './main-body/customer-details/customer-
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatDialogModule ,
+
   ],
   
   providers: [DevicetestService],

@@ -1,33 +1,4 @@
-<!-- 
-<table *ngIf='customerDetails' id="customerDetails">
-    <tr>
-        <td>CustomerId</td>
-        <td>{{customerDetails.id}}</td>
-    </tr>
-    <tr>
-        <td>Customer Name</td>
-        <td>{{customerDetails.name}}</td>
-    </tr>
-    <tr>
-        <td>Email</td>
-        <td>{{customerDetails.email}}</td>
-    </tr>
-    <tr>
-        <td>Address</td>
-        <td>{{customerDetails.address}}</td>
-    </tr>
-    <tr>
-        <td>Comapny</td>
-        <td>{{customerDetails.company}}</td>
-    </tr>
-</table>
 
-<div id="chartDiv">
-    <canvas id="deviceChart"></canvas>
-</div>
-
-
- -->
 
 <body>
     <div class="container">
@@ -45,30 +16,34 @@
         </div>
         <div class="table-graph">
             <div class="table">
-                <table>
+         
+                <table id="device">
                     <tbody>
                         <tr>
-                            <th>Device Id</th>
-                            <th>Device Name</th>
+                            <th> Id</th>
+                            <th>Device</th>
                             <th>Total Test</th>
-                            <th>Expiry</th>
-                           
+                            <th>Current Package</th>
+                            <th>Expiry</th> 
+                       
                         </tr>
-                        <tr>
-                            <td></td>
-                            <td>12344</td>
-                            <td>12344</td>
-                            <td>12344</td>
-                            
+                        <tr *ngFor="let device of dataset" >
+                          
+                            <td (click)="deviceDialog()"> {{device.deviceId}}</td>
+                            <td (click)="deviceDialog()">{{device.deviceName}}</td>
+                            <td (click)="deviceDialog()">{{device.testNum}}</td>
+                            <td (click)="deviceDialog()"> {{device.currentPackage}}</td>
+                            <td (click)="deviceDialog()">{{device.expiry}}</td>
                         </tr>
                         
                        
                     </tbody>
                 </table>
             </div>
-            <div class="graph">
-                <canvas id="deviceChart"></canvas>
+            <div class="chart">
+               <canvas id="deviceChart"> </canvas>
             </div>
+            
         </div>
     </div>
 </body>

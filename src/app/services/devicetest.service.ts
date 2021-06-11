@@ -39,20 +39,23 @@ export class DevicetestService {
   createDeviceChartData(customer) {
     var dataset = []
 
-
+ 
     customer[0].data.forEach(device => {
+    
       var deviceId = device.id
       var deviceName = device.device
+      var currentPackage=device.currentPackage
+      var expiry=device.expiry
       var test = 0
       device.data.forEach(element => {
         
 
         test += element.testconducted
       });
-      dataset.push({ deviceId: deviceId, deviceName: deviceName, testNum: test })
+      dataset.push({ deviceId: deviceId, deviceName: deviceName, testNum: test ,currentPackage:currentPackage,expiry:expiry})
 
     });
-    console.log(dataset);
+    
     
     return dataset
   }

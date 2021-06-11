@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router'
 import { DevicetestService } from '../../services/devicetest.service'
 import { CustomerService } from '../../services/customer.service'
 import { Chart } from 'chart.js'
+import {MatDialog,MatDialogConfig } from '@angular/material/dialog';
+import { DevicePerformanceComponent } from '../device-performance/device-performance.component';
 
 
 @Component({
@@ -13,7 +15,7 @@ import { Chart } from 'chart.js'
 export class CustomerDetailsComponent implements OnInit {
   public customerId;
   public customerDetails: any
-  public dataset;
+  public dataset:any
   public labels = []
   public testNum = []
   public chart: any
@@ -21,21 +23,20 @@ export class CustomerDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private deviceTestService: DevicetestService,
-    private customerServcie: CustomerService) { }
+    private customerServcie: CustomerService,
+    public matDialog:MatDialog) { }
 
   ngOnInit(): void {
+    
     this.customerId = this.route.snapshot.paramMap.get("id");
-    console.log(this.customerId);
-    this.deviceTestService.getCustomerTestData(this.customerId).subscribe((data: any) => {
-
-
-    })
+    
+    this.initializeChart()
     this.customerServcie.getcustomer(this.customerId).subscribe((data: any) => {
       this.customerDetails = data
 
     })
-    this.initializeChart()
-
+   
+    
   }
 
 
@@ -46,7 +47,8 @@ export class CustomerDetailsComponent implements OnInit {
 
       this.dataset = this.deviceTestService.createDeviceChartData(data)
 
-
+      console.log(this.dataset);
+      
 
       this.dataset.forEach(element => {
 
@@ -54,7 +56,7 @@ export class CustomerDetailsComponent implements OnInit {
         this.labels.push(element.deviceId)
 
         this.testNum.push(element.testNum)
-        console.log(this.labels, this.testNum);
+       
 
       });
 
@@ -65,7 +67,6 @@ export class CustomerDetailsComponent implements OnInit {
 
       this.chart = new Chart('deviceChart', {
         type: 'bar',
-      
         data: {
           labels: this.labels,
           datasets: [
@@ -74,16 +75,16 @@ export class CustomerDetailsComponent implements OnInit {
               data: this.testNum,
               yAxisID: 'devicenumber',
               backgroundColor: '#0040ff',
-              barPercentage:0.5, 
-              
-             
+               
             }
 
           ]
         },
         options: {
          
-          
+          layout:{
+            padding:70
+          },
           maintainAspectRatio: false,
           legend: {
             display: false
@@ -107,7 +108,7 @@ export class CustomerDetailsComponent implements OnInit {
                 },
                 ticks: {
                   beginAtZero: true,
-                  stepSize: 50
+                  stepSize: 100
                 }
               }
 
@@ -124,4 +125,16 @@ export class CustomerDetailsComponent implements OnInit {
 
 
   }
+ deviceDialog(){
+  const dialogConfig = new MatDialogConfig();
+  console.log("called");
+
+  dialogConfig.disableClose = true;
+  dialogConfig.id = "modal-component";
+  dialogConfig.height = "500px";
+  dialogConfig.width = "700px";
+  
+  // https://material.angular.io/components/dialog/overview
+  const modalDialog = this.matDialog.open(DevicePerformanceComponent, dialogConfig);
+ }
 }
