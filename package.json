@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "server:abhishek": "json-server --watch db/abhishek.json --port 8000",
-    "server:rajat": "json-server --watch db/rajat.json --port 8000"
+    "server:rajat": "json-server --watch db/rajat.json --port 9000"
   },
   "private": true,
   "dependencies": {
