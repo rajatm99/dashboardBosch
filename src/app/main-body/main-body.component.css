@@ -1,5 +1,6 @@
 .mainBodyDiv{
     width: 100%;
+    display: inline-flex;
 }
 
 .kpiDiv{
@@ -11,7 +12,7 @@
 
 .chartsDiv{
     width:100%;
-    display: inline-flex;
+    display: inline-block;
 }
 
 .sales-testDiv{
