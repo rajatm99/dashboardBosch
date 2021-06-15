@@ -8,7 +8,7 @@
     <div class="filterTab">
         <form>
             <select (change)="packageClick($event.target.value)">
-                <option value="allpackage"> All Package</option>
+                <option value="All Package"> All Package</option>
                 <option  *ngFor="let package of packageList" 
                         value={{package}}>
                             {{package}}

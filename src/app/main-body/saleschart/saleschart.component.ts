@@ -14,7 +14,7 @@ export class SaleschartComponent implements OnInit {
   public chart : any
   packageList = []
   timeSet = "year"
-  pack="packageA"
+  pack="All Package"
   week="week"
   month="month"
   year="year"
@@ -36,6 +36,7 @@ export class SaleschartComponent implements OnInit {
 
   public packageClick(packg){
     this.pack=packg
+    console.warn(this.pack)
     if(this.timeSet=="year"){
       this.setYearlyChart()
     }else if(this.timeSet=="month"){
@@ -46,47 +47,55 @@ export class SaleschartComponent implements OnInit {
   }
 
   public setYearlyChart(){   
+    var dict={}
   
     this.saleService.getData("/saleinfo").subscribe(res => {
         var label = []
         var data = []
-        console.log(res.valueOf)
         for(let key in res){              
               var temp = 0
               var x = res[key]
-              this.items.push(res[key])              
-              if(x.packageName == this.pack){
-                for(var i in x.sale){
-                  // console.log("in")
-                  // console.log(x.sale[i])
-                  label.push(x.sale[i].year)
-                  for(var j in x.sale[i].data){
-                    // console.log(j)
-                    for(var k in x.sale[i].data[j]){
-                      // console.log(x.sale[i].data[j][k])
-                      temp+=x.sale[i].data[j][k]
+              this.items.push(res[key])     
+              if(this.pack!="All Package"){                  
+                if(x.packageName == this.pack){
+                  for(var i in x.sale){       
+                    label.push(x.sale[i].year)
+                    for(var j in x.sale[i].data){
+                      for(var k in x.sale[i].data[j]){       
+                        temp+=x.sale[i].data[j][k]
+                      }
+                    }   
+                    if(!dict[x.sale[i].year]){               
+                      dict[x.sale[i].year]=temp
+                    }else{
+                      dict[x.sale[i].year]+=temp
                     }
+                    temp=0
                   }
-                  data.push(temp)
-                  temp=0
-                }
-                break 
-              }  
-              // }else if(pack = "all"){
-              //   for(var i in x.sale){          
-              //     label.push(x.sale[i].year)
-              //     for(var j in x.sale[i].data){          
-              //       for(var k in x.sale[i].data[j]){    
-              //         temp+=x.sale[i].data[j][k]
-              //       }
-              //     }
-              //     data.push(temp)
-              //   }
-              // }
+                  break 
+                }  
+              }else if(this.pack=="All Package"){ 
+                  for(var i in x.sale){          
+                    label.push(x.sale[i].year)
+                    for(var j in x.sale[i].data){          
+                      for(var k in x.sale[i].data[j]){    
+                        temp+=x.sale[i].data[j][k]
+                      }
+                    }
+                    if(!dict[x.sale[i].year]){               
+                      dict[x.sale[i].year]=temp
+                    }else{
+                      dict[x.sale[i].year]+=temp
+                    }
+                    temp=0
+                  }  
+                        
+
+              }      
                
         }
-        console.log(data)
-        console.log(label)
+        label=Object.keys(dict)
+        data=Object.values(dict)    
         this.setChart(data,label)  
        
       }
@@ -96,46 +105,64 @@ export class SaleschartComponent implements OnInit {
   }
 
   public setWeeklyChart(){
+    var dict={}
     this.saleService.getData("/saleinfo").subscribe(res => {
       var label = []
       var data = []
       var week=0
-      console.log(res.valueOf)
+      // console.log(res.valueOf)
       for(let key in res){              
             var temp = 0
             var x = res[key]
-            this.items.push(res[key])              
-            if(x.packageName == this.pack){
-              for(var i in x.sale){
-                // label.push(x.sale[i].year)
+            this.items.push(res[key])     
+            if(this.pack!="All Package"){         
+              if(x.packageName == this.pack){
+                for(var i in x.sale){
+                  // label.push(x.sale[i].year)
+                  for(var j in x.sale[i].data){
+                    // console.log(j)
+                    for(var k in x.sale[i].data[j]){
+                      // console.log(x.sale[i].data[j][k])
+                      temp=x.sale[i].data[j][k]                
+                      if(!dict[x.sale[i].year]){               
+                        dict[x.sale[i].year+week]=temp
+                      }else{
+                        dict[x.sale[i].year+week]+=temp
+                      }
+                      temp=0
+                      week++
+                    }
+                  
+                  }
+          
+                }
+                break 
+              }  
+            }else if(this.pack=="All Package"){
+              for(var i in x.sale){        
                 for(var j in x.sale[i].data){
-                  // console.log(j)
-                  for(var k in x.sale[i].data[j]){
-                    // console.log(x.sale[i].data[j][k])
-                    data.push(x.sale[i].data[j][k])
-                    label.push(week)
+                  for(var k in x.sale[i].data[j]){       
+                    temp=x.sale[i].data[j][k]                
+                    if(!dict[x.sale[i].year]){               
+                      dict[x.sale[i].year+week]=temp
+                    }else{
+                      dict[x.sale[i].year+week]+=temp
+                    }
+                    temp=0
                     week++
                   }
+                
                 }
         
               }
-              break 
-            }  
-            // }else if(pack = "all"){
-            //   for(var i in x.sale){          
-            //     label.push(x.sale[i].year)
-            //     for(var j in x.sale[i].data){          
-            //       for(var k in x.sale[i].data[j]){    
-            //         temp+=x.sale[i].data[j][k]
-            //       }
-            //     }
-            //     data.push(temp)
-            //   }
-            // }
+
+            } 
+            week=0 
              
       }
-      console.log(data)
-      console.log(label)
+      console.log(dict)
+      label=Object.keys(dict)
+      data=Object.values(dict)   
       this.setChart(data,label)  
      
     }
@@ -145,36 +172,56 @@ export class SaleschartComponent implements OnInit {
   }
 
   public setMonthlyChart(){
+    var dict = {}
     this.saleService.getData("/saleinfo").subscribe(res => {
       var label = []
       var data = []
-      console.log(res.valueOf)
+      // console.log(res.valueOf)
       for(let key in res){              
             var temp = 0
             var x = res[key]
-            this.items.push(res[key])              
-            if(x.packageName == this.pack){
+            this.items.push(res[key])   
+            if(this.pack!="All Package"){           
+              if(x.packageName == this.pack){
+                for(var i in x.sale){
+
+                  for(var j in x.sale[i].data){
+ 
+                    for(var k in x.sale[i].data[j]){
+
+                      temp+=x.sale[i].data[j][k]
+                    }
+
+                    if(!dict[x.sale[i].year+j]){               
+                      dict[x.sale[i].year+j]=temp
+                    }else{
+                      dict[x.sale[i].year+j]+=temp
+                    }
+                    temp=0
+                  }          
+                }
+                break 
+              }
+            }else if(this.pack=="All Package"){
               for(var i in x.sale){
-                // console.log("in")
-                // console.log(x.sale[i])
-                
                 for(var j in x.sale[i].data){
-                  // console.log(j)
                   for(var k in x.sale[i].data[j]){
-                    // console.log(x.sale[i].data[j][k])
                     temp+=x.sale[i].data[j][k]
                   }
-                  data.push(temp)
+                  if(!dict[x.sale[i].year+j]){               
+                    dict[x.sale[i].year+j]=temp
+                  }else{
+                    dict[x.sale[i].year+j]+=temp
+                  }
                   temp=0
-                  label.push(j)
                 }          
               }
-              break 
+
             }               
       }
-      console.log(data)
-      console.log(label)
-      this.setChart(data,label)  
+      label=Object.keys(dict)
+      data=Object.values(dict)    
+      this.setChart(data,label)
      
     }
   
@@ -211,7 +258,7 @@ export class SaleschartComponent implements OnInit {
   public getPackageList(){
     this.saleService.getData("/package").subscribe(res =>{
       for(let key in res){
-        console.log(res[key].name)
+        // console.log(res[key].name)
         this.packageList.push(res[key].name)
       }
     })
@@ -221,12 +268,12 @@ export class SaleschartComponent implements OnInit {
  
 ngOnInit(): void {
 
-  this.saleService.getData("/device").subscribe(res => {console.log(res)})
-  console.log("ONNUM VANNILLE??") 
+  // this.saleService.getData("/device").subscribe(res => {console.log(res)})
+  // console.log("ONNUM VANNILLE??") 
   // this.setChart()
   this.getPackageList()
-  console.log(this.packageList)
-  this.setMonthlyChart()
+  // console.log(this.packageList)
+  this.setYearlyChart()
 
   }
 
