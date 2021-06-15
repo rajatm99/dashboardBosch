@@ -1,5 +1,6 @@
 .mainBodyDiv{
     width: 100%;
+    display: inline-flex;
 }
 
 .kpiDiv{
@@ -11,26 +12,38 @@
 
 .chartsDiv{
     width:100%;
-    display: inline-flex;
+    display: inline-block;
 }
 
 .sales-testDiv{
     height: 30%;
-    width: 77%;
+    width: 100%;
     display: flex;
+
 }
 
 .deviceDiv{
     width: 23%;
+
     
 }
 
 .salesChart{
     width: 50%;
     padding: 4%;
+
 }
 
 .customerChart{
     width: 50%;
     padding: 4%;
+
+}
+
+.deviceChartDIV{
+
+}
+
+.serviceChartDiv{
+
 }
