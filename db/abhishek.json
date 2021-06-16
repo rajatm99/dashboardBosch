@@ -341,12 +341,23 @@
         {
             "deviceId":"d1",
             "device":"deviceA",
-            "servicecount":0
+            "servicecount":27
         },
         {
             "deviceId":"d2",
             "device":"deviceB",
-            "servicecount":0
+            "servicecount":18
+        },
+        {
+            "deviceId":"d3",
+            "device":"deviceC",
+            "servicecount":10
+        },
+        {
+            "deviceId":"d4",
+            "device":"deviceD",
+            "servicecount":20
         }
+
     ]
 }

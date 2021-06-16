@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Chart} from 'chart.js'
+import { ServiceCountService } from 'src/app/services/service-count.service';
 
 @Component({
   selector: 'app-servicechart',
@@ -7,24 +8,73 @@ import {Chart} from 'chart.js'
   styleUrls: ['./servicechart.component.css']
 })
 export class ServicechartComponent implements OnInit {
-
-  constructor() { }
+  public chart:any
+  constructor(public serviceCount:ServiceCountService) { }
 
   ngOnInit(): void {
     
-    var chart= new Chart('serviceChart',{
-      type: 'line',
-      data: {
-        datasets: [{
-            type: 'bar',
-            label: 'Number of Devices',            
-            backgroundColor:'blue',
-            data :[10,20,30,40],
-            order: 1
-        }],
-        labels:['A','B','C','D']
-    }
-    })
+   this.serviceCount.getServiceData().subscribe((data:any)=>{
+     console.log(data);
+     var label=[]
+     var count=[]
+     data.forEach(element => {
+       label.push(element.device)
+       count.push(element.servicecount)
+     });
+     this.chart = new Chart ('serviceChart',{
+       type:'bar',
+       data:{
+         labels:label,
+         datasets:[
+           {
+             data:count,
+             backgroundColor: [
+              '#003f5c',
+              '#7a5195',
+              '#bc5090',
+              '#ef5675',
+              '#ff764a',
+              '#ffa600'
+           
+            ]
+           }
+         ]
+       },
+       options:{
+        maintainAspectRatio: false,
+        legend: {
+          display: false
+        },
+        scales: {
+          yAxes: [
+            {
+              id: 'Service Request',
+              type: 'linear',
+              position: 'left',
+              scaleLabel: {
+                labelString: 'Service Request',
+                display: true,
+                fontColor: 'blue',
+
+
+              },
+              
+              ticks: {
+                beginAtZero: true,
+                stepSize: 10
+              }
+            }
+
+          ],
+          xAxes: [{ 
+            gridLines:{
+              display:false
+            }
+           }]
+        }
+       }
+     })
+   })
   }
 
 }

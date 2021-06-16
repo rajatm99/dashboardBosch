@@ -156,7 +156,7 @@ export class CustomerchartComponent implements OnInit {
             {
               data: this.deviceNum,
               yAxisID: 'devicenumber',
-              backgroundColor: '#0040ff',
+              backgroundColor: '#0083c2',
               barPercentage: .6,
 
             }
@@ -264,5 +264,8 @@ export class CustomerchartComponent implements OnInit {
     this.chart.data.datasets[1].data = deviceNum
     this.chart.update()
 
+  }
+  sortBy(value){
+    
   }
 }

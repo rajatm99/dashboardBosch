@@ -82,9 +82,7 @@ export class CustomerDetailsComponent implements OnInit {
         },
         options: {
          
-          layout:{
-            padding:70
-          },
+          
           maintainAspectRatio: false,
           legend: {
             display: false

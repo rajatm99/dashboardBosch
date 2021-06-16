@@ -17,9 +17,18 @@ export class DevicechartComponent implements OnInit {
         datasets: [{
             type: 'doughnut',
             label: 'Number of Devices',            
-            backgroundColor:'blue',
+            backgroundColor: [
+              '#003f5c',
+              '#7a5195',
+              '#bc5090',
+              '#ef5675',
+              '#ff764a',
+              '#ffa600'
+           
+            ],
             data :[10,20,30,40],
-            order: 1
+            
+          
         }],
         labels:['A','B','C','D']
     },

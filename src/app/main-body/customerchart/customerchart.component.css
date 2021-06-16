@@ -3,3 +3,18 @@
   height:40vh
 }
 
+button{
+  border: none;
+  background-color:inherit;
+  color: #000099;
+  font-size: 100%;
+  font-weight: bold;
+  padding:2px;
+  margin:5px
+    
+}
+button:focus{
+  color:blue;
+  text-decoration: underline;
+
+}
