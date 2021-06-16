@@ -7,11 +7,37 @@ import {Chart} from 'chart.js'
 })
 export class DevicechartComponent implements OnInit {
 
+  // Chart is declared outside init
+  public chart : any
+  public chartData = [10,20,30,40]
+  public chartLabel = ['A','B','C','D']
   
+// **********************************************
+//  This function is called when clicked on chart
+  chartClick(event){
+    let activeEvent = this.chart.getElementAtEvent(event);
+
+    // Index of the element
+    var clickIndex = activeEvent[0]._index
+    
+    // Data and label of the clicked item
+    var clickData = this.chartData[clickIndex]
+    var clickLabel = this.chartLabel[clickIndex]
+
+    // 
+    console.warn(clickIndex)
+    console.warn(clickData)
+    console.warn(clickLabel)
+    
+}
+
+// ****************************************************
+
+
   constructor() { }
 
   ngOnInit(): void {
-    var chart= new Chart('deviceChart',{
+    this.chart= new Chart('deviceChart',{
       type: 'doughnut',
       data: {
         datasets: [{
@@ -26,19 +52,22 @@ export class DevicechartComponent implements OnInit {
               '#ffa600'
            
             ],
-            data :[10,20,30,40],
+            data :this.chartData,
             
           
         }],
-        labels:['A','B','C','D']
+        labels:this.chartLabel
     },
    options:{
-     
+    //  ON CLICK EVENT
+     onClick: this.chartClick.bind(this),
    }
    
-  })
+  })  
   
 }
+
+
 
 
 
