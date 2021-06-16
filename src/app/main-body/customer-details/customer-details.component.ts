@@ -125,12 +125,14 @@ export class CustomerDetailsComponent implements OnInit {
 
 
   }
- deviceDialog(){
+ deviceDialog(deviceId){
+   
+   
   const dialogConfig = new MatDialogConfig();
-  console.log("called");
+  
 
   dialogConfig.disableClose = true;
-  dialogConfig.id = "modal-component";
+  dialogConfig.id = deviceId;
   dialogConfig.height = "500px";
   dialogConfig.width = "700px";
   

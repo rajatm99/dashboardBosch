@@ -29,11 +29,11 @@
                         </tr>
                         <tr *ngFor="let device of dataset" >
                           
-                            <td (click)="deviceDialog()"> {{device.deviceId}}</td>
-                            <td (click)="deviceDialog()">{{device.deviceName}}</td>
-                            <td (click)="deviceDialog()">{{device.testNum}}</td>
-                            <td (click)="deviceDialog()"> {{device.currentPackage}}</td>
-                            <td (click)="deviceDialog()">{{device.expiry}}</td>
+                            <td (click)="deviceDialog(device.deviceId)"> {{device.deviceId}}</td>
+                            <td (click)="deviceDialog(device.deviceId)">{{device.deviceName}}</td>
+                            <td (click)="deviceDialog(device.deviceId)">{{device.testNum}}</td>
+                            <td (click)="deviceDialog(device.deviceId)"> {{device.currentPackage}}</td>
+                            <td (click)="deviceDialog(device.deviceId)">{{device.expiry}}</td>
                         </tr>
                         
                        

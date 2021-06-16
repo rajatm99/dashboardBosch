@@ -1,11 +1,12 @@
 export const environment = {
     production : false,
     BASE_URL : "http://localhost:8000/",
-    sales:{
-        GET_SALES_DATA:'sales'
+    SALES:{
+        GET_SALES_DATA:'sales/'
     },
-    testdata:{
+    TEST_DATA:{
         GET_TEST_DATA:'testdata/',
+        GET_SINGLE_DEVICE_DATA:'testinfo/'
         
         },
     CUSTOMER:{

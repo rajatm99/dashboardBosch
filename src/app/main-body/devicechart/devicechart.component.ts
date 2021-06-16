@@ -7,6 +7,7 @@ import {Chart} from 'chart.js'
 })
 export class DevicechartComponent implements OnInit {
 
+  
   constructor() { }
 
   ngOnInit(): void {
@@ -21,8 +22,15 @@ export class DevicechartComponent implements OnInit {
             order: 1
         }],
         labels:['A','B','C','D']
-    }
-    })
-  }
+    },
+   options:{
+     
+   }
+   
+  })
+  
+}
+
+
 
 }
