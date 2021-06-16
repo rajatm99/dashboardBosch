@@ -359,5 +359,21 @@
             "servicecount":20
         }
 
-    ]
+    ],
+    "kpi":{
+        "totalsales":{
+            "totalsale":"230",
+            "thisyear":"39",
+            "thismonth":"7"
+        },
+        "salegrowth":"105%",
+        "customer":{
+            "totalcustomer":"29",
+            "thisyear":"9",
+            "thismonth":"1"
+        },
+        "saletarget":"89%",
+        "deviceactive":"78"
+
+    }
 }
