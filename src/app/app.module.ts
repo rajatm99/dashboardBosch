@@ -25,7 +25,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { CustomertableComponent } from './main-body/customertable/customertable.component';
 import { CustomerDetailsComponent } from './main-body/customer-details/customer-details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DevicePerformanceComponent } from './main-body/device-performance/device-performance.component'
+import { DevicePerformanceComponent } from './main-body/device-performance/device-performance.component';
+import { MapComponentComponent } from './map-component/map-component.component'
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { DevicePerformanceComponent } from './main-body/device-performance/devic
     CustomertableComponent,
     CustomerDetailsComponent,
     DevicePerformanceComponent,
+    MapComponentComponent,
    
   ],
   imports: [
