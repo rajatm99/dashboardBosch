@@ -361,8 +361,8 @@
 
     ],
     "kpi":{
-        "totalsales":{
-            "totalsale":"230",
+        "sales":{
+            "totalsales":"230",
             "thisyear":"39",
             "thismonth":"7"
         },
@@ -373,7 +373,13 @@
             "thismonth":"1"
         },
         "saletarget":"89%",
-        "deviceactive":"78"
+        "deviceactive":"78",
+        "subscription":{
+            "grace":"23",
+            "today":"4",
+            "firstweek":"12",
+            "secondweek":"23"
+        }
 
     }
 }
