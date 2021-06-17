@@ -14,6 +14,7 @@ export class DeviceDetailsComponent implements OnInit {
   deviceId:string
   customerList=[]
   chartData=[]
+  chartLabel=[]
   totalDevice=0
   chart :any
   constructor(  private route: ActivatedRoute,
@@ -34,6 +35,7 @@ export class DeviceDetailsComponent implements OnInit {
      
         this.customerList.push({customerId:customer.customerId,customerName:customer.customer})
         this.chartData.push(customer.devicelist.length)
+        this.chartLabel.push(customer.customer)
         this.totalDevice+=customer.devicelist.length
       });
       
@@ -50,7 +52,7 @@ export class DeviceDetailsComponent implements OnInit {
         },
         type:'bar',
         data:{
-          labels:this.customerList,
+          labels:this.chartLabel,
           datasets:[
             {
               data:this.chartData,

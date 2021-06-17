@@ -1,19 +1,22 @@
 
 <h4>DETAILS OF {{deviceName}} </h4>
 <p>Total device {{totalDevice}}</p>
-<div id="customerTable">
-    <table>
-        <tr>
-            <th>Id</th>
-            <th>Customer Name</th>
-        </tr>
-        <tr *ngFor='let customer of customerList'>
-            <td>{{customer.customerId}}</td>
-            <td>{{customer.customerName}}</td>
-        </tr>
-    </table>
+<div id="container">
+    <div id="customerTable">
+        <table id="customer">
+            <tr>
+                <th>Id</th>
+                <th>Customer Name</th>
+            </tr>
+            <tr *ngFor='let customer of customerList'>
+                <td>{{customer.customerId}}</td>
+                <td>{{customer.customerName}}</td>
+            </tr>
+        </table>
+    </div>
+    <div id="chartDiv">
+        <canvas  id="deviceChart"></canvas>
+    </div> 
 </div>
-<div id="chartDiv">
-    <canvas  id="deviceChart"></canvas>
-</div> 
+
 
