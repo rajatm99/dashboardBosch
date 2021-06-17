@@ -15,6 +15,9 @@ export const environment = {
     },
     SERVICE:{
         GET_SERVICE_COUNT:'service/'
+    },
+    DEVICE:{
+        GET_SINGLE_DEVICE_INFO:'deviceinfo/'
     }
 
 }

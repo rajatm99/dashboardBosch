@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router'
+import { ActivatedRoute } from '@angular/router';
+import { initializeApp } from 'firebase';
+import { SalesService } from 'src/app/services/sales.service';
+import { Chart } from 'chart.js';
 
 @Component({
   selector: 'app-device-details',
@@ -8,13 +11,58 @@ import { ActivatedRoute } from '@angular/router'
 })
 export class DeviceDetailsComponent implements OnInit {
   deviceName:string
-
-  constructor(  private route: ActivatedRoute,) { }
+  deviceId:string
+  customerList=[]
+  chartData=[]
+  totalDevice=0
+  chart :any
+  constructor(  private route: ActivatedRoute,
+                private salesService:SalesService) { }
 
   ngOnInit(): void {
     this.deviceName = this.route.snapshot.paramMap.get("id");
-    console.log(this.deviceName);
+    this.fetData(this.deviceName)
     
+  }
+
+  fetData(deviceName){
+    this.salesService.getDeviceInfo(deviceName).subscribe((data:any) =>{
+      
+      this.deviceId=data[0].deviceId
+      
+      data[0].customerlist.forEach(customer => {
+     
+        this.customerList.push({customerId:customer.customerId,customerName:customer.customer})
+        this.chartData.push(customer.devicelist.length)
+        this.totalDevice+=customer.devicelist.length
+      });
+      
+      this.chart = new Chart ('deviceChart',{
+        options:{
+          scales:{
+           yAxes:[{
+            ticks:{
+              beginAtZero:true,
+              stepSize:1
+            }
+           }]
+          }
+        },
+        type:'bar',
+        data:{
+          labels:this.customerList,
+          datasets:[
+            {
+              data:this.chartData,
+              backgroundColor: '#0040ff',
+              barPercentage: .6,
+            }
+          ]
+        }
+      })
+     
+      
+    })
   }
 
 }

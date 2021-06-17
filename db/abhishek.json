@@ -1,5 +1,5 @@
 {
-     "customers":[
+     "customer":[
         {
             "id":"c1",
             "name":"customerA",
@@ -386,22 +386,124 @@
         {
             "deviceId":"d1",
             "device":"deviceA",
-            "sale":"28"
+            "sale":"3"
         },
         {
             "deviceId":"d2",
             "device":"deviceB",
-            "sale":"10"
+            "sale":"3"
         },
         {
             "deviceId":"d3",
             "device":"deviceC",
-            "sale":"14"
+            "sale":"4"
         },
         {
             "deviceId":"d4",
             "device":"deviceD",
-            "sale":"8"
+            "sale":"2"
+        }
+    ],
+    "deviceinfo":[
+        {
+            "deviceId":"d1",
+            "device":"deviceA",
+            "customerlist":[
+                {
+                    "customerId":"c1",
+                    "customer":"customerA",
+                    "devicelist":[
+                        {"id":"d1-1"}
+                       
+                    ]
+                },
+                {
+                    "customerId":"c4",
+                    "customer":"customerD",
+                    "devicelist":[
+                        {"id":"d1-2"},
+                        {"id":"d1-3"}
+                       
+                    ]
+                }
+            ]
+        },
+        {
+            "deviceId":"d2",
+            "device":"deviceB",
+            "customerlist":[
+                {
+                    "customerId":"c1",
+                    "customer":"customerA",
+                    "devicelist":[
+                        {"id":"d2-1"}
+                       
+                    ]
+                },
+                {
+                    "customerId":"c2",
+                    "customer":"customerB",
+                    "devicelist":[
+                        {"id":"d2-2"}
+                       
+                    ]
+                },
+                {
+                    "customerId":"c3",
+                    "customer":"customerC",
+                    "devicelist":[
+                        {"id":"d2-3"}
+                       
+                    ]
+                }
+            ]
+        },
+        {
+            "deviceId":"d3",
+            "device":"deviceC",
+            "customerlist":[
+                {
+                    "customerId":"c1",
+                    "customer":"customerA",
+                    "devicelist":[
+                        {"id":"d3-1"},
+                        {"id":"d3-2"}
+
+                       
+                    ]
+                },
+                {
+                    "customerId":"c2",
+                    "customer":"customerB",
+                    "devicelist":[
+                        {"id":"d3-3"},
+                        {"id":"d3-4"}
+                       
+                    ]
+                }
+            ]
+        },
+        {
+            "deviceId":"d4",
+            "device":"deviceD",
+            "customerlist":[
+                {
+                    "customerId":"c2",
+                    "customer":"customerB",
+                    "devicelist":[
+                        {"id":"d4-1"}
+                       
+                    ]
+                },
+                {
+                    "customerId":"c3",
+                    "customer":"customerC",
+                    "devicelist":[
+                        {"id":"d4-2"}
+                       
+                    ]
+                }
+            ]
         }
     ]
 }

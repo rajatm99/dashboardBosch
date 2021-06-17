@@ -7,6 +7,7 @@ import { environment } from '../../environments/environment.dev'
 })
 
 export class SalesService {
+  
 
   constructor(private http: HttpClient) { }
 
@@ -17,6 +18,10 @@ export class SalesService {
   
   getDeviceSalesData(){
     var url=environment.BASE_URL+environment.SALES.GET_DEVICE_SALES_DATA
+    return this.http.get(url)
+  }
+  getDeviceInfo(deviceName){
+    var url=environment.BASE_URL+environment.DEVICE.GET_SINGLE_DEVICE_INFO+'?device='+deviceName
     return this.http.get(url)
   }
   
