@@ -8,6 +8,7 @@ import am4themes_animated from '@amcharts/amcharts4/themes/animated';
 import * as am4maps from "@amcharts/amcharts4/maps";
 import am4geodata_worldLow from "@amcharts/amcharts4-geodata/worldLow";
 import am4themes_dataviz from "@amcharts/amcharts4/themes/dataviz";
+import { title } from 'process';
 
 
 /* Chart code */
@@ -21,6 +22,11 @@ am4core.useTheme(am4themes_animated);
   templateUrl: './map-component.component.html',
   styleUrls: ['./map-component.component.css']
 })
+
+// MAP OBJECT 
+
+
+
 export class MapComponentComponent {
   private chart: am4charts.XYChart;
 
@@ -64,8 +70,8 @@ polygonTemplate.polygon.fillOpacity = 0.6;
 
 
 // Create hover state and set alternative fill color
-let hs = polygonTemplate.states.create("hover");
-hs.properties.fill = chart.colors.getIndex(0);
+// let hs = polygonTemplate.states.create("hover");
+// hs.properties.fill = chart.colors.getIndex(0);
 
 // Add image series
 let imageSeries = chart.series.push(new am4maps.MapImageSeries());
@@ -82,6 +88,29 @@ circle.nonScaling = true;
 let circle2 = imageSeries.mapImages.template.createChild(am4core.Circle);
 circle2.radius = 3;
 circle2.propertyFields.fill = "color";
+
+class mapData {
+  latitude: string;
+  title: string;
+  longitude: string;
+  color: any;
+
+  constructor(obj : any){
+      this.latitude=obj.latitude
+      this.title=obj.title
+      this.longitude=obj.longitude
+      this.color=obj.color
+  }
+}
+
+// CLICK EVENT
+imageSeries.mapImages.template.events.on("hit", (ev)=>{
+  // console.log(ev.target.dataItem.dataContext)
+  var dataMap = new mapData(ev.target.dataItem.dataContext);
+  console.log(dataMap.title)
+  alert(dataMap.title+" "+dataMap.latitude+" "+dataMap.longitude)
+})
+
 
 
 circle2.events.on("inited", function(event){
@@ -134,7 +163,7 @@ imageSeries.data = [ {
   "title": "London",
   "latitude": 51.5002,
   "longitude": -0.1262,
-  "url": "http://www.google.co.uk",
+
   "color":colorSet.next()
 }, {
   "title": "Peking",
@@ -150,7 +179,7 @@ imageSeries.data = [ {
   "title": "Tokyo",
   "latitude": 35.6785,
   "longitude": 139.6823,
-  "url": "http://www.google.co.jp",
+
   "color":colorSet.next()
 }, {
   "title": "Ankara",
