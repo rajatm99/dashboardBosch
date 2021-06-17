@@ -22,6 +22,22 @@ export class SaleschartComponent implements OnInit {
   packB = "packageB"
   packC = "packageC"
   items = []
+  timeUpper=0
+  timeLower=0
+
+  public timeSpanLess(){
+    console.log("TIME SPAN LESS")
+    this.timeUpper=this.timeUpper-2
+    this.timeLower=this.timeLower-2
+    this.setChart()
+  }
+
+  public timeSpanMore(){
+    this.timeUpper=this.timeUpper+2
+    this.timeLower=this.timeLower+2
+    this.setChart()
+
+  }
 
   public setTime(time){
     this.timeSet=time
@@ -95,8 +111,12 @@ export class SaleschartComponent implements OnInit {
                
         }
         label=Object.keys(dict)
-        data=Object.values(dict)    
-        this.setChart(data,label)  
+        data=Object.values(dict) 
+        this.timeUpper=data.length
+        this.timeLower=Math.max(data.length-4,0)   
+        this.chartData=data
+        this.chartLable=label
+        this.setChart()  
        
       }
     
@@ -161,9 +181,14 @@ export class SaleschartComponent implements OnInit {
              
       }
       console.log(dict)
+      
       label=Object.keys(dict)
       data=Object.values(dict)   
-      this.setChart(data,label)  
+      this.timeUpper=data.length
+      this.timeLower=Math.max(data.length-6,0)
+      this.chartData=data
+      this.chartLable=label
+      this.setChart() 
      
     }
   
@@ -219,16 +244,29 @@ export class SaleschartComponent implements OnInit {
 
             }               
       }
+      
       label=Object.keys(dict)
       data=Object.values(dict)    
-      this.setChart(data,label)
+      this.timeUpper=data.length
+      this.timeLower=Math.max(data.length-4,0)
+      this.chartData=data
+      this.chartLable=label
+      this.setChart()
      
     }
   
   )
   }
 
-  public setChart(data,label){
+  public setChart(){
+    var data : Array<any>
+    var label : Array<any>
+    data=this.chartData
+    label=this.chartLable
+    data=data.slice(this.timeLower,this.timeUpper)
+    label=label.slice(this.timeLower,this.timeUpper)
+    console.log("SET CHART")
+    console.log(data)
     if(this.chart){
       this.chart.destroy()
     }
@@ -273,7 +311,7 @@ ngOnInit(): void {
   // this.setChart()
   this.getPackageList()
   // console.log(this.packageList)
-  this.setYearlyChart()
+  this.setWeeklyChart()
 
   }
 
