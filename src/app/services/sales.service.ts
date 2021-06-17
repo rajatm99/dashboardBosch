@@ -15,5 +15,9 @@ export class SalesService {
     return this.http.get(url)
   }
   
+  getDeviceSalesData(){
+    var url=environment.BASE_URL+environment.SALES.GET_DEVICE_SALES_DATA
+    return this.http.get(url)
+  }
   
 }

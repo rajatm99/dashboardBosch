@@ -381,5 +381,27 @@
             "secondweek":"23"
         }
 
-    }
+    },
+    "devicesales":[
+        {
+            "deviceId":"d1",
+            "device":"deviceA",
+            "sale":"28"
+        },
+        {
+            "deviceId":"d2",
+            "device":"deviceB",
+            "sale":"10"
+        },
+        {
+            "deviceId":"d3",
+            "device":"deviceC",
+            "sale":"14"
+        },
+        {
+            "deviceId":"d4",
+            "device":"deviceD",
+            "sale":"8"
+        }
+    ]
 }

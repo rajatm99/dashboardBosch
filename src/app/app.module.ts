@@ -26,7 +26,8 @@ import { CustomertableComponent } from './main-body/customertable/customertable.
 import { CustomerDetailsComponent } from './main-body/customer-details/customer-details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DevicePerformanceComponent } from './main-body/device-performance/device-performance.component';
-import { MapComponentComponent } from './map-component/map-component.component'
+import { MapComponentComponent } from './map-component/map-component.component';
+import { DeviceDetailsComponent } from './main-body/device-details/device-details.component'
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { MapComponentComponent } from './map-component/map-component.component'
     CustomerDetailsComponent,
     DevicePerformanceComponent,
     MapComponentComponent,
+    DeviceDetailsComponent,
    
   ],
   imports: [
