@@ -1,39 +1,48 @@
 <div class="container">
-    <div class="subscriptionDiv" id="subscription">
-        <div class="kpiheader">Subscription Expiry</div>
-        <div class="subscriptionButtonBar" id="subscriptionButtonBar">
-            <button>Grace <br> <span style="color: blue;">00</span></button>
-            <button class="subscriptionButton">Today<br> <span style="color:red;">00</span></button>
-            <button class="subscriptionButton">7Days<br> <span style="color: orange;">00</span></button>
-            <button class="subscriptionButton">14Days<br> <span style="color: green;">00</span></button>
-        </div>
-    </div>
+   
 
     <div class="kpiblock" id="totalSale">
         <div class="kpiheader">Total Sales</div>
+        <span>{{kpiObj.sales.totalsales}}</span>
     
        
     
     </div>
     <div class="kpiblock" id="saleGrowth">
         <div class="kpiheader">Sale Growth</div>
+        <span>{{kpiObj.salegrowth}}</span>
 
     </div>
     <div class="kpiblock" id="customerNumber">
         <div class="kpiheader">Customer</div>
+        <span>{{kpiObj.customer.totalcustomer}}</span>
 
     </div>
     <div class="kpiblock" id="saleTarget">
         <div class="kpiheader">Sale Target</div>
+        <span style="color: green;font-size: xx-large;font-weight: bolder;">{{kpiObj.saletarget}}</span>
    
+    </div>
+
+    <div class="kpiblock" id="activeDevice">
+        <div class="kpiheader">Device Active</div>
+        <span>{{kpiObj.deviceactive}}</span>
+    </div>
+
+    
+    
+    <div class="subscriptionDiv" id="subscription">
+        <div class="kpiheader">Subscription Expiry</div>
+        <div class="subscriptionButtonBar" id="subscriptionButtonBar">
+            <button>Grace <br> <span style="color: blue;">{{kpiObj.subscription.grace}}</span></button>
+            <button class="subscriptionButton">Today<br> <span style="color:red;">{{kpiObj.subscription.today}}</span></button>
+            <button class="subscriptionButton">7Days<br> <span style="color: orange;">{{kpiObj.subscription.firstweek}}</span></button>
+            <button class="subscriptionButton">14Days<br> <span style="color: green;">{{kpiObj.subscription.secondweek}}</span></button>
+        </div>
     </div>
 
     <div class="kpiblock" id="notification">
         <div class="kpiheader">Notification</div>
     </div>
     
-    <div class="kpiblock" id="activeDevice">
-        <div class="kpiheader">Device Active</div>
-   
-    </div>
 </div>

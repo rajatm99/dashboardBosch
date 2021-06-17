@@ -361,8 +361,8 @@
 
     ],
     "kpi":{
-        "totalsales":{
-            "totalsale":"230",
+        "sales":{
+            "totalsales":"230",
             "thisyear":"39",
             "thismonth":"7"
         },
@@ -373,7 +373,35 @@
             "thismonth":"1"
         },
         "saletarget":"89%",
-        "deviceactive":"78"
+        "deviceactive":"78",
+        "subscription":{
+            "grace":"23",
+            "today":"4",
+            "firstweek":"12",
+            "secondweek":"23"
+        }
 
-    }
+    },
+    "devicesales":[
+        {
+            "deviceId":"d1",
+            "device":"deviceA",
+            "sale":"28"
+        },
+        {
+            "deviceId":"d2",
+            "device":"deviceB",
+            "sale":"10"
+        },
+        {
+            "deviceId":"d3",
+            "device":"deviceC",
+            "sale":"14"
+        },
+        {
+            "deviceId":"d4",
+            "device":"deviceD",
+            "sale":"8"
+        }
+    ]
 }
