@@ -1,4 +1,4 @@
-.mainBodyDiv{
+/* .mainBodyDiv{
     width: 100%;
     display: inline-flex;
     
@@ -24,7 +24,7 @@
 }
 
 .deviceDiv{
-    /* width: 23%; */
+ 
 width: 35%;
     
 }
@@ -38,6 +38,63 @@ width: 35%;
 .customerChart{
     width: 50%;
     padding: 4%;
+
+} */
+@media only screen and (min-width: 768px) {
+    .mainBodyDiv{
+        width: 100%;
+        display: inline-flex;
+        
+    }
+    
+    .kpiDiv{
+        width: 100%;
+        height: 14vh;  
+        
+      
+    }
+    
+    .chartsDiv{
+        width:100%;
+        display: inline-block;
+        order: 2;
+    }
+    
+    .sales-testDiv{
+        height: 30%;
+        width: 100%;
+        display: flex;
+    
+    }
+    
+    .deviceDiv{
+        /* width: 23%; */
+        margin-top: 10px;
+        width: 35%;
+    /* padding: 10px; */
+        padding-bottom: 0;
+        order: 1;
+     }
+     .deviceChartDIV{
+         height: 50%;
+     }
+     .serviceChartDiv{
+         height: 50%;
+         margin-bottom: 0;
+     }
+  
+    
+    .salesChart{
+        width: 50%;
+        padding: 4%;
+    
+    }
+    
+    .customerChart{
+        width: 50%;
+        padding: 4%;
+    
+    }
 
 }
 

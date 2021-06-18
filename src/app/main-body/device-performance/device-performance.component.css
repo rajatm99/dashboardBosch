@@ -2,7 +2,9 @@
    width: 100%;
    height: 100%;
 }
-
-@media only screen and (min-width: 768px) {
-
+button{
+    border-color:white;
+    background:initial ;
+    position: relative;
+    float: right;
 }
