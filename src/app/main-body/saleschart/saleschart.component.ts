@@ -37,7 +37,8 @@ export class SaleschartComponent implements OnInit {
         if(this.timeLower==0){
           console.warn("DISABLE BUTTON")
         }
-        this.setChart()
+        this.setChart()       
+        
     }
 
     

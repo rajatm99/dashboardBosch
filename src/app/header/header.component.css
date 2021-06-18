@@ -1,7 +1,8 @@
-.headerDiv{
-    width: 100%;
+.headerDiv {
+  width: 100%;
+  height: auto;
 }
 
-.headerImage{
-    max-width: 100%;
+.headerImage {
+  max-width: 100%;
 }

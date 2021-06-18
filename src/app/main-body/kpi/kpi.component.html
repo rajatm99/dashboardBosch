@@ -18,7 +18,7 @@
 
     <div class="kpiblock" id="saleTarget">
         <div class="kpiheader">Sale Target</div>
-        <div class="kpidata" style="color:rgb(2, 80, 2);font-size:2em;font-weight: bolder;">{{kpiObj.saletarget}}</div>
+        <div class="kpidata" >{{kpiObj.saletarget}}</div>
    </div>
 
     <div class="kpiblock" id="activeDevice">
@@ -28,10 +28,10 @@
 
     
     
-    <div class="subscriptionDiv" id="subscription">
-        <div class="kpiheader">Subscription Expiry</div>
+    <div class="kpiblock" id="subscription">
+        <div class="kpiheader" id="subscriptionExpiry">Subscription Expiry</div>    
         <div class="subscriptionButtonBar" id="subscriptionButtonBar">
-            <button>Grace <br> <span style="color: blue;">{{kpiObj.subscription.grace}}</span></button>
+            <button class="subscriptionButton">Grace <br> <span style="color: blue;">{{kpiObj.subscription.grace}}</span></button>
             <button class="subscriptionButton">Today<br> <span style="color:red;">{{kpiObj.subscription.today}}</span></button>
             <button class="subscriptionButton">7Days<br> <span style="color: orange;">{{kpiObj.subscription.firstweek}}</span></button>
             <button class="subscriptionButton">14Days<br> <span style="color: green;">{{kpiObj.subscription.secondweek}}</span></button>

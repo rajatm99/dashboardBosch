@@ -1,28 +1,27 @@
-
-
-button{
+button {
   border: none;
-  background-color:inherit;
+  background-color: inherit;
   color: #000099;
   font-size: 80%;
   font-weight: bold;
-  padding:2px;
-  margin:5px;
+  padding: 2px;
+  margin: 5px;
   margin-left: 5px;
-    
 }
-button:focus{
-  color:blue;
+button:focus {
+  color: blue;
   text-decoration: underline;
-
 }
-#chartDiv{
-  width: 100%;
-  height:35vh;
-  background: rgba(255, 255, 255, 0.253);
-  padding:2%;
-  padding-bottom: 30px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
-  border-radius: 8px;
 
- }
+#chartDiv {
+  width: 97% !important;
+  min-height: 35vh;
+  max-height: 40vh;
+  background: rgba(255, 255, 255);
+  padding: 2%;
+  padding-bottom: 30px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  border-radius: 8px;
+}

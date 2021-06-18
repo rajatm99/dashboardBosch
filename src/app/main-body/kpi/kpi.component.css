@@ -1,75 +1,94 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
-.container{
-    display: flex;
-    flex-direction: ltr;
-    justify-self:center;
-    height: 100%;    
-}
-
-.kpiheader{
-    color: #0645AD ;
-    font-size: smaller;
-    letter-spacing: 0.6px;
-    text-align: center;
-    margin:auto;
-    font-weight:600;
-    
-}
-.subscriptionButton{
-    margin: 5px;    
-  
+.container {
+  display: flex;
+  flex-direction: ltr;
+  justify-self: center;
+  height: 100%;
 }
 
-.subscriptionButtonBar{
-    display:flex  ;
-    flex-direction: row;
-    justify-content: space-evenly;
-    width: 100%;
-   
+.kpiheader {
+  min-width: 100%;
+  color: #0645ad;
+  font-size: smaller;
+  letter-spacing: 0.6px;
+  text-align: center;
+  margin: auto;
+  font-weight: 600;
+}
+#totalSale {
+  margin-left: 1%;
 }
 
-.subscriptionDiv{
-    width:28%;
-    border-style: solid;
-    height: 100%;
-    border-width: 1px;
-    border-color: #F0F0F0;
-    background-color: #F5F5F5;
-    margin: 0.3%;
-    padding: 0.5%;
-    padding-bottom: 0px;
-    display: inline-block;
-    float:none;
-    font-family: Arial, Helvetica, sans-serif;
-
-    border-radius: 5px;
-    box-shadow: 1px 1px 3px #aaaaaa;
+.subscriptionButton {
+  min-width: 22%;
+  margin: 5px;
+  background-color: white;
+  padding: 2%;
+  align-items: center;
 }
 
-.kpiblock{
-    border-style: solid;
-    font-family: Arial, Helvetica, sans-serif;
-    border-width: 1px;
-    border-color: #F0F0F0;
-    background-color: #F5F5F5;
-    width: 12.5%;
-    /* height: 100%; */
-    height: auto;
-    margin: 0.3%;
-
-    padding: 0.5%;
-    padding-bottom: 0px;
-    border-radius: 5px;
-    box-shadow: 1px 1px 3px #aaaaaa;
-   text-align: center;
-
+.subscriptionButtonBar {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10%;
+  justify-content: space-evenly;
+  width: 100%;
 }
-.kpidata{
-    display: inline-block;
-    vertical-align: middle;
-    text-align: center;
-    padding: 3px;
-    margin-top: 10px;;
+
+#subscription {
+  width: 28%;
+}
+
+#subscriptionExpiry {
+  margin-top: 3px;
+}
+
+.kpiblock {
+  min-height: 100%;
+  max-height: 100%;
+  width: 12.5%;
+  border-style: solid;
+
+  border-width: 1px;
+  border-color: #f0f0f0;
+  background: rgba(255, 255, 255, 0.253);
+
+  margin-right: 0.5%;
+  margin-left: 0.5%;
+
+  padding: 0.5%;
+  padding-bottom: 0px;
+
+  float: none;
+  font-family: Arial, Helvetica, sans-serif;
+
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px #aaaaaa;
+
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+.kpidata {
+  min-width: 100%;
+  min-height: auto;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  padding: 3px;
+
+  text-align: center;
+  margin-top: 20%;
+  margin-bottom: 20%;
+
+  /* background-color: red; */
+  font-size: 25px;
+  font-weight: 300;
+}
+
+.kpiheader {
+  margin-top: 4%;
+  margin-bottom: -10%;
 }
