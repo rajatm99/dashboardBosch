@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { initializeApp } from 'firebase';
 import { SalesService } from 'src/app/services/sales.service';
 import { Chart } from 'chart.js';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-device-details',
@@ -18,7 +20,8 @@ export class DeviceDetailsComponent implements OnInit {
   totalDevice=0
   chart :any
   constructor(  private route: ActivatedRoute,
-                private salesService:SalesService) { }
+                private salesService:SalesService,
+                private router:Router) { }
 
   ngOnInit(): void {
     this.deviceName = this.route.snapshot.paramMap.get("id");
@@ -66,5 +69,12 @@ export class DeviceDetailsComponent implements OnInit {
       
     })
   }
+  
+  getCustomer(id){
+  this.router.navigate(['customer/',id],{relativeTo:this.route})
+  
+}
+
+
 
 }

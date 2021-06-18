@@ -29,12 +29,22 @@ export class ServicechartComponent implements OnInit {
            {
              data:count,
              backgroundColor: [
-              '#003f5c',
-              '#7a5195',
-              '#bc5090',
-              '#ef5675',
-              '#ff764a',
-              '#ffa600'
+              // '#003f5c',
+              // '#7a5195',
+              // '#bc5090',
+              // '#ef5675',
+              // '#ff764a',
+              // '#ffa600'
+
+              '#004c6d',
+              // '#006083',
+              '#007599',
+              // '#008bad',
+              '#00a1c1',
+              // '#00b8d3',
+              '#00cfe3',
+              // '#00e7f2',
+              '#00ffff'
            
             ]
            }

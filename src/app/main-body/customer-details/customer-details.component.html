@@ -1,23 +1,35 @@
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Dashboard</title>
+</head>
 <body>
     <div class="container">
         <div class="details">
-            <div class="details-L">
+            <div class="profile-image">
+                <img src="../../../assets/profile.jpg">
+            </div>
+            <div class="line-s"></div>
+            <div class="details-1">
                 <div class="content">Name: {{customerDetails.name}}</div>
                 <div class="content">Emp_id: {{customerDetails.id}}</div>
                 <div class="content">Company :{{customerDetails.company}} </div>
             </div>
-            <div class="details-R">
+            <div class="details-1">
                 <div class="content">Email:{{customerDetails.email}}</div>
                 <div class="content">Phone:{{customerDetails.phone}}</div>
                 <div class="content">Address:{{customerDetails.address}}</div>
             </div>
         </div>
+        <div class="line-s"></div>
+        <div class="line"></div>
         <div class="table-graph">
             <div class="table">
-         
-                <table id="device">
+                <table>
                     <tbody>
                         <tr>
                             <th> Id</th>
@@ -35,15 +47,13 @@
                             <td (click)="deviceDialog(device.deviceId)"> {{device.currentPackage}}</td>
                             <td (click)="deviceDialog(device.deviceId)">{{device.expiry}}</td>
                         </tr>
-                        
-                       
                     </tbody>
                 </table>
             </div>
-            <div class="chart">
-               <canvas id="deviceChart"> </canvas>
+            <div class="graph">
+                <canvas id="deviceChart"> </canvas>
             </div>
-            
         </div>
     </div>
 </body>
+</html>

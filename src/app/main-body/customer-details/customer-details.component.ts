@@ -131,8 +131,8 @@ export class CustomerDetailsComponent implements OnInit {
 
   dialogConfig.disableClose = true;
   dialogConfig.id = deviceId;
-  dialogConfig.height = "500px";
-  dialogConfig.width = "700px";
+  dialogConfig.height = "62%";
+  dialogConfig.width = "50%";
   
   // https://material.angular.io/components/dialog/overview
   const modalDialog = this.matDialog.open(DevicePerformanceComponent, dialogConfig);

@@ -27,7 +27,8 @@ import { CustomerDetailsComponent } from './main-body/customer-details/customer-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DevicePerformanceComponent } from './main-body/device-performance/device-performance.component';
 import { MapComponentComponent } from './map-component/map-component.component';
-import { DeviceDetailsComponent } from './main-body/device-details/device-details.component'
+import { DeviceDetailsComponent } from './main-body/device-details/device-details.component';
+import { DeviceCustomerComponent } from './main-body/device-customer/device-customer.component'
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { DeviceDetailsComponent } from './main-body/device-details/device-detail
     DevicePerformanceComponent,
     MapComponentComponent,
     DeviceDetailsComponent,
+    DeviceCustomerComponent,
    
   ],
   imports: [

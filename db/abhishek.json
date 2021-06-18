@@ -1,5 +1,5 @@
 {
-     "customer":[
+     "customers":[
         {
             "id":"c1",
             "name":"customerA",
@@ -57,7 +57,7 @@
             "name":"packageC"
         }
     ],
-     "testdata":[
+     "testdata":[ 
         {   "customerId":"c1",
             "customer":"customerA",
             "data":[
@@ -100,6 +100,46 @@
                             "testconducted":30
                         }
                     ]
+                },
+                {   "id":"d3-1",
+                    "device":"deviceC",
+                    "deviceId":"d3",
+                    "expiry":"10dec2021",
+                    "currentPackage":"packageB",
+                    "data":[
+                        {
+                            "year":"2018",
+                            "testconducted":50
+                        },
+                        {
+                            "year":"2019",
+                            "testconducted":20
+                        },
+                        {
+                            "year":"2020",
+                            "testconducted":30
+                        }
+                    ]
+                },
+                {   "id":"d3-2",
+                    "device":"deviceC",
+                    "deviceId":"d3",
+                    "expiry":"10dec2021",
+                    "currentPackage":"packageB",
+                    "data":[
+                        {
+                            "year":"2018",
+                            "testconducted":50
+                        },
+                        {
+                            "year":"2019",
+                            "testconducted":20
+                        },
+                        {
+                            "year":"2020",
+                            "testconducted":30
+                        }
+                    ]
                 }
             ]
         },
@@ -109,6 +149,66 @@
                  { "id":"d2-2",
                     "deviceId":"d2",
                     "device":"deviceB",
+                    "expiry":"24Sep2021",
+                    "currentPackage":"packageD",
+                    "data":[
+                        {
+                            "year":"2018",
+                            "testconducted":233
+                        },
+                        {
+                            "year":"2019",
+                            "testconducted":122
+                        },
+                        {
+                            "year":"2020",
+                            "testconducted":286
+                        }
+                    ]
+                },
+                { "id":"d3-3",
+                    "deviceId":"d3",
+                    "device":"deviceC",
+                    "expiry":"24Sep2021",
+                    "currentPackage":"packageD",
+                    "data":[
+                        {
+                            "year":"2018",
+                            "testconducted":200
+                        },
+                        {
+                            "year":"2019",
+                            "testconducted":100
+                        },
+                        {
+                            "year":"2020",
+                            "testconducted":120
+                        }
+                    ]
+                },
+                { "id":"d3-4",
+                    "deviceId":"d3",
+                    "device":"deviceC",
+                    "expiry":"24Sep2021",
+                    "currentPackage":"packageD",
+                    "data":[
+                        {
+                            "year":"2018",
+                            "testconducted":266
+                        },
+                        {
+                            "year":"2019",
+                            "testconducted":211
+                        },
+                        {
+                            "year":"2020",
+                            "testconducted":286
+                        }
+                    ]
+                },
+                { "id":"d4-1",
+                    "deviceId":"d4",
+                    "device":"deviceD",
                     "expiry":"24Sep2021",
                     "currentPackage":"packageD",
                     "data":[
@@ -149,6 +249,26 @@
                         {
                             "year":"2020",
                             "testconducted":189
+                        }
+                    ]
+                },
+                { "id":"d4-2",
+                    "deviceId":"d4",
+                    "device":"deviceD",
+                    "expiry":"24Sep2021",
+                    "currentPackage":"packageD",
+                    "data":[
+                        {
+                            "year":"2018",
+                            "testconducted":233
+                        },
+                        {
+                            "year":"2019",
+                            "testconducted":122
+                        },
+                        {
+                            "year":"2020",
+                            "testconducted":286
                         }
                     ]
                 }
@@ -331,6 +451,138 @@
                 {
                     "year":"2020",
                     "test":[22, 12, 16, 7, 9, 18, 15, 12, 24, 16, 14, 23]
+                }
+            ]
+        },
+        {
+            "id":"d3-1",
+            "customer":"customerA",
+            "customerId":"c1",
+            "deviceId":"d3",
+            "expiry":"expired",
+            "currentPackage":"packageA",
+            "data":[
+                {
+                    "year":"2018",
+                    "test":[6,5,3,12,2,4,1,5,3,2,2,4]
+                },
+                {
+                    "year":"2019",
+                    "test":[6,7,3,8,2,4,1,5,3,7,0,4]
+                },
+                {
+                    "year":"2020",
+                    "test":[1,3,5,2,2,4,1,3,3,8,6,4]
+                }
+            ]
+        },
+        {
+            "id":"d3-2",
+            "customer":"customerA",
+            "customerId":"c1",
+            "deviceId":"d3",
+            "expiry":"expired",
+            "currentPackage":"packageA",
+            "data":[
+                {
+                    "year":"2018",
+                    "test":[6,5,3,12,2,4,1,5,3,2,2,4]
+                },
+                {
+                    "year":"2019",
+                    "test":[6,7,3,8,2,4,1,5,3,7,0,4]
+                },
+                {
+                    "year":"2020",
+                    "test":[1,3,5,2,2,4,1,3,3,8,6,4]
+                }
+            ]
+        },
+        {
+            "id":"d3-3",
+            "customer":"customerB",
+            "customerId":"c2",
+            "deviceId":"d3",
+            "expiry":"expired",
+            "currentPackage":"packageA",
+            "data":[
+                {
+                    "year":"2018",
+                    "test":[6,5,3,12,2,4,1,5,3,2,2,4]
+                },
+                {
+                    "year":"2019",
+                    "test":[6,7,3,8,2,4,1,5,3,7,0,4]
+                },
+                {
+                    "year":"2020",
+                    "test":[1,3,5,2,2,4,1,3,3,8,6,4]
+                }
+            ]
+        },
+        {
+            "id":"d3-4",
+            "customer":"customerB",
+            "customerId":"c2",
+            "deviceId":"d3",
+            "expiry":"expired",
+            "currentPackage":"packageA",
+            "data":[
+                {
+                    "year":"2018",
+                    "test":[6,5,3,12,2,4,1,5,3,2,2,4]
+                },
+                {
+                    "year":"2019",
+                    "test":[6,7,3,8,2,4,1,5,3,7,0,4]
+                },
+                {
+                    "year":"2020",
+                    "test":[1,3,5,2,2,4,1,3,3,8,6,4]
+                }
+            ]
+        },
+        {
+            "id":"d4-1",
+            "customer":"customerB",
+            "customerId":"c2",
+            "deviceId":"d4",
+            "expiry":"expired",
+            "currentPackage":"packageA",
+            "data":[
+                {
+                    "year":"2018",
+                    "test":[6,5,3,12,2,4,1,5,3,2,2,4]
+                },
+                {
+                    "year":"2019",
+                    "test":[6,7,3,8,2,4,1,5,3,7,0,4]
+                },
+                {
+                    "year":"2020",
+                    "test":[1,3,5,2,2,4,1,3,3,8,6,4]
+                }
+            ]
+        },
+        {
+            "id":"d4-2",
+            "customer":"customerC",
+            "customerId":"c3",
+            "deviceId":"d4",
+            "expiry":"expired",
+            "currentPackage":"packageA",
+            "data":[
+                {
+                    "year":"2018",
+                    "test":[6,5,3,12,2,4,1,5,3,2,2,4]
+                },
+                {
+                    "year":"2019",
+                    "test":[6,7,3,8,2,4,1,5,3,7,0,4]
+                },
+                {
+                    "year":"2020",
+                    "test":[1,3,5,2,2,4,1,3,3,8,6,4]
                 }
             ]
         }

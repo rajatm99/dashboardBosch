@@ -9,8 +9,8 @@
                 <th>Customer Name</th>
             </tr>
             <tr *ngFor='let customer of customerList'>
-                <td>{{customer.customerId}}</td>
-                <td>{{customer.customerName}}</td>
+                <td (click)='getCustomer(customer.customerId)'>{{customer.customerId}}</td>
+                <td  (click)='getCustomer(customer.customerId)'>{{customer.customerName}}</td>
             </tr>
         </table>
     </div>
