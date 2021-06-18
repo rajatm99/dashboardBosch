@@ -4,5 +4,9 @@
 }
 
 .router {
-  width: 100%;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  /* padding-left: 7%;
+  padding-right: 7%; */
 }
