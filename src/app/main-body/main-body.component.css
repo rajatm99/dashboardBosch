@@ -1,6 +1,7 @@
 .mainBodyDiv {
   width: 100%;
-  height: 64vh !important;
+  min-height: 30vmax !important;
+  max-height: 100%;
   display: inline-flex;
 
   /* overflow-x: hidden; */
@@ -13,15 +14,17 @@
 
 .deviceChartDIV {
   min-height: 50% !important;
+  max-height: 50%;
 }
 
 .serviceChartDiv {
   min-height: 50% !important;
+  max-height: 50%;
 }
 
 .kpiDiv {
   width: 100%;
-  height: 14vh;
+  height: 6.5vmax;
 
   display: flexbox;
   flex-direction: row;
