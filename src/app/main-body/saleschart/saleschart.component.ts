@@ -1,6 +1,7 @@
 import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'chart.js'
+import * as moment from 'moment';
 import { SalesService } from '../../services/sales.service'
 @Component({
   selector: 'app-saleschart',
@@ -13,7 +14,7 @@ export class SaleschartComponent implements OnInit {
   public chartLable : any[]
   public chart : any
   packageList = []
-  timeSet = "year"
+  timeSet = "week"
   pack="All Package"
   week="week"
   month="month"
@@ -25,18 +26,32 @@ export class SaleschartComponent implements OnInit {
   timeUpper=0
   timeLower=0
 
+  public months=moment.monthsShort()
+
   public timeSpanLess(){
     console.log("TIME SPAN LESS")
-    this.timeUpper=this.timeUpper-2
-    this.timeLower=this.timeLower-2
-    this.setChart()
+
+    if(this.timeSet=="week"){ // show 7 weeks
+        this.timeUpper=Math.max(this.timeUpper-7,6)
+        this.timeLower=Math.max(this.timeLower-7,0)
+        if(this.timeLower==0){
+          console.warn("DISABLE BUTTON")
+        }
+        this.setChart()
+    }
+
+    
   }
 
   public timeSpanMore(){
-    this.timeUpper=this.timeUpper+2
-    this.timeLower=this.timeLower+2
-    this.setChart()
-
+    if(this.timeSet=="week"){ // show 7 weeks
+        this.timeUpper=Math.min(this.timeUpper+7,(this.chartData.length-1))
+        this.timeLower=Math.min(this.timeLower+7,(this.chartData.length-8))
+        if(this.timeLower==0){
+          console.warn("DISABLE BUTTON")
+        }
+        this.setChart()
+    }
   }
 
   public setTime(time){
@@ -143,7 +158,12 @@ export class SaleschartComponent implements OnInit {
                     // console.log(j)
                     for(var k in x.sale[i].data[j]){
                       // console.log(x.sale[i].data[j][k])
-                      temp=x.sale[i].data[j][k]                
+                      temp=x.sale[i].data[j][k] 
+                      if(parseInt(k)==0){
+                        label.push(this.months[parseInt(j)]+" - "+x.sale[i].year)
+                      }else{
+                        label.push("")
+                      }             
                       if(!dict[x.sale[i].year]){               
                         dict[x.sale[i].year+week]=temp
                       }else{
@@ -162,7 +182,12 @@ export class SaleschartComponent implements OnInit {
               for(var i in x.sale){        
                 for(var j in x.sale[i].data){
                   for(var k in x.sale[i].data[j]){       
-                    temp=x.sale[i].data[j][k]                
+                    temp=x.sale[i].data[j][k]   
+                    if(parseInt(k)==0){
+                      label.push(this.months[parseInt(j)]+" - "+x.sale[i].year)
+                    }else{
+                      label.push("")
+                    }             
                     if(!dict[x.sale[i].year]){               
                       dict[x.sale[i].year+week]=temp
                     }else{
@@ -182,12 +207,16 @@ export class SaleschartComponent implements OnInit {
       }
       console.log(dict)
       
-      label=Object.keys(dict)
+      // label=Object.keys(dict)
       data=Object.values(dict)   
-      this.timeUpper=data.length
-      this.timeLower=Math.max(data.length-6,0)
+      this.timeUpper=data.length-1
+      this.timeLower=Math.max(data.length-8,0)
       this.chartData=data
+      console.warn(this.chartData)
+      
       this.chartLable=label
+      console.warn(data.length)
+      console.warn(label.length)
       this.setChart() 
      
     }
@@ -216,6 +245,9 @@ export class SaleschartComponent implements OnInit {
 
                       temp+=x.sale[i].data[j][k]
                     }
+                   
+                    label.push(this.months[parseInt(j)]+" - "+x.sale[i].year)
+                   
 
                     if(!dict[x.sale[i].year+j]){               
                       dict[x.sale[i].year+j]=temp
@@ -233,6 +265,9 @@ export class SaleschartComponent implements OnInit {
                   for(var k in x.sale[i].data[j]){
                     temp+=x.sale[i].data[j][k]
                   }
+                
+                    label.push(this.months[parseInt(j)]+" - "+x.sale[i].year)
+               
                   if(!dict[x.sale[i].year+j]){               
                     dict[x.sale[i].year+j]=temp
                   }else{
@@ -245,7 +280,7 @@ export class SaleschartComponent implements OnInit {
             }               
       }
       
-      label=Object.keys(dict)
+
       data=Object.values(dict)    
       this.timeUpper=data.length
       this.timeLower=Math.max(data.length-4,0)
@@ -304,7 +339,7 @@ export class SaleschartComponent implements OnInit {
   }
 
  
-ngOnInit(): void {
+ngOnInit(): void {  
 
   // this.saleService.getData("/device").subscribe(res => {console.log(res)})
   // console.log("ONNUM VANNILLE??") 
