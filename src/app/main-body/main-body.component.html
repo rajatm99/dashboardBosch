@@ -1,8 +1,21 @@
 <div class="mainBodyDiv">
 
-    <div class="deviceDiv">
-        <div class="deviceChartDIV"> <app-devicechart></app-devicechart></div>
-        <div class="serviceChartDiv"><app-servicechart></app-servicechart>  </div>
+    <div class="deviceDiv" id="mapOut">
+        <div class="deviceChartDIV" id="mapOut"> <app-devicechart></app-devicechart></div>
+        <div class="serviceChartDiv" id="mapOut"><app-servicechart></app-servicechart>  </div>
+        
+    </div>
+
+    <div class="deviceDiv" id="mapIn" style="display: flex; flex-direction: row;">
+
+        <div style="display: flex; flex-direction: column;">
+            <div class="deviceChartDIV"> <app-devicechart></app-devicechart></div>
+            <div class="serviceChartDiv"><app-servicechart></app-servicechart>  </div>
+        </div>    
+
+        <div class="mapComponent">
+            <app-map-component style="align-items: center;"></app-map-component>
+        </div>
         
     </div>
     
@@ -21,6 +34,6 @@
 
 </div>
 
-<!-- <div class="maoComponent">
+<div class="mapComponent" id="mapOut">
     <app-map-component></app-map-component>
-</div> -->
+</div>
