@@ -67,6 +67,10 @@ export class DevicechartComponent implements OnInit {
         options: {
           //  ON CLICK EVENT
           onClick: this.chartClick.bind(this),
+          legend: {
+            position: 'right',
+            align:"center"
+         }
         }
 
       })

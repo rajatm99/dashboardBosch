@@ -105,3 +105,20 @@
 
   font-size: 11px;
 }
+
+@media only screen and (max-width: 400px) {
+  .container {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+
+  .kpiblock {
+    height: 50%;
+    width: 25vw;
+  }
+
+  #subscription {
+    width: 50vw;
+    grid-area: 2/2 / span 1 / span 2;
+  }
+}
