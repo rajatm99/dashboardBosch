@@ -5,29 +5,35 @@
             "name":"customerA",
             "email":"customerA@gmail.com",
             "address":"address of customerA",
-            "company":"company of customerA"
-           
+            "company":"company of customerA",
+            "latitude": "50.8371",
+            "longitude": "4.3676"    
 
         },{
             "id":"c2",
             "name":"customerB",
             "email":"customerB@gmail.com",
             "address":"address of customerB",
-            "company":"company of customerB"
+            "company":"company of customerB",
+            "latitude": "48.8567",
+            "longitude": "2.3510"
 
         },{ "id":"c3",
             "name":"customerC",
             "email":"customerC@gmail.com",
             "address":"address of customerC",
-            "company":"company of customerC"
+            "company":"company of customerC",
+            "latitude": "64.1353",
+            "longitude": "-21.8952"
 
         },
         { "id":"c4",
             "name":"customerD",
             "email":"customerD@gmail.com",
             "address":"address of customerD",
-            "company":"company of customerD"
-
+            "company":"company of customerD",
+            "latitude": "40.4167",
+            "longitude": "-3.7033"
         }
     ],
     "device":[

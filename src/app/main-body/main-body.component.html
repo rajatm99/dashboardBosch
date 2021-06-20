@@ -1,39 +1,30 @@
-<div class="mainBodyDiv">
+<div class="superMain">    
+    <div class="mainBodyDiv">
 
-    <div class="deviceDiv" id="mapOut">
-        <div class="deviceChartDIV"> <app-devicechart></app-devicechart></div>
-        <div class="serviceChartDiv" ><app-servicechart></app-servicechart>  </div>
-        
-    </div>
-
-    <div class="deviceDiv" id="mapIn">
-
-        <div >
+        <div class="deviceDiv" >
             <div class="deviceChartDIV"> <app-devicechart></app-devicechart></div>
-            <div class="serviceChartDiv"><app-servicechart></app-servicechart>  </div>
-        </div>    
-
-        <div class="mapComponent">
-            <app-map-component style="align-items: center;"></app-map-component>
+            <div class="serviceChartDiv" ><app-servicechart></app-servicechart>  </div>
+            
         </div>
+
+
         
+        <div class="chartsDiv">
+            <div class="kpiDiv"><app-kpi></app-kpi></div>
+            <div class="sales-testDiv">
+                <div class="salesChart"><app-saleschart></app-saleschart></div>
+                <div class="customerChart"><app-customerchart></app-customerchart></div>
+            </div>
+        </div>    
+      
+    
+        
+
+
     </div>
-    
-    <div class="chartsDiv">
-        <div class="kpiDiv"><app-kpi></app-kpi></div>
-        <div class="sales-testDiv">
-            <div class="salesChart"><app-saleschart></app-saleschart></div>
-            <div class="customerChart"><app-customerchart></app-customerchart></div>
-        </div>
+
+    <div class="mapComponent" >
+        <app-map-component  style="align-items: center;"></app-map-component>
     </div>
 
-    
-  
-    
-
-
-</div>
-
-<div class="mapComponent" id="mapOut">
-    <app-map-component></app-map-component>
 </div>

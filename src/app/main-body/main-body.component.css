@@ -1,3 +1,8 @@
+.superMain {
+  display: flex;
+  flex-direction: column;
+}
+
 .mainBodyDiv {
   width: 100%;
   min-height: 30vmax !important;
@@ -16,6 +21,7 @@
 
 #mapOut {
   visibility: visible;
+  display: block;
 }
 
 .deviceDiv {
