@@ -77,11 +77,14 @@
   }
 
   .chartsDiv {
+    width: 100%;
     margin-top: 0%;
   }
 
   #mapIn {
     visibility: visible;
+    display: flex !important;
+    flex-direction: row;
   }
 
   #mapOut {
