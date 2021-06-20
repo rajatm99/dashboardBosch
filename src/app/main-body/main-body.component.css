@@ -1,14 +1,10 @@
-.superMain {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
 .mainBodyDiv {
   width: 100%;
   min-height: 30vmax !important;
   max-height: 100%;
-  display: inline-flex;
+  display: grid;
+  grid-gap: 0%;
+  grid-template-columns: 27% 73%;
 
   background-color: darkblue;
 
@@ -27,7 +23,7 @@
 
 .deviceDiv {
   min-height: 100% !important;
-  max-width: 30%;
+  width: 100%;
   padding-bottom: 2%;
   background-color: black;
 }
@@ -53,9 +49,10 @@
 }
 
 .chartsDiv {
-  width: 75%;
+  width: 100%;
   height: auto;
   display: inline-block;
+
   background-color: chartreuse;
 }
 
@@ -75,23 +72,20 @@
   padding: 1%;
 }
 
+.mapComponent {
+  grid-column: 1/3;
+}
+
 @media only screen and (max-width: 1100px) {
   .mainBodyDiv {
     background-color: blue;
     padding-top: 0%;
-    display: flex;
-    flex-direction: column-reverse;
   }
 
   .chartsDiv {
     width: 100%;
     margin-top: 0%;
-  }
-
-  .mapComponent {
-    position: relative;
-    right: 0%;
-    width: 70%;
+    grid-area: 1 / 1 / span 1 / span 2;
   }
 
   #mapIn {
@@ -102,6 +96,10 @@
 
   #mapOut {
     display: none;
+  }
+
+  .mapComponent {
+    grid-area: 2 / 2;
   }
 }
 
