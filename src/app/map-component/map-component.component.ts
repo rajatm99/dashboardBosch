@@ -11,6 +11,7 @@ import am4themes_dataviz from "@amcharts/amcharts4/themes/dataviz";
 import { title } from 'process';
 
 import { SalesService } from '../services/sales.service'
+import {Router,ActivatedRoute} from '@angular/router'
 
 /* Chart code */
 // Themes begin
@@ -32,7 +33,11 @@ export class MapComponentComponent {
 
   x:any[]
 
-  constructor(@Inject(PLATFORM_ID) private platformId, private zone: NgZone,private saleService: SalesService) {}
+  constructor(@Inject(PLATFORM_ID)  private platformId,
+                                    private router : Router, 
+                                    private zone: NgZone,
+                                    private saleService: SalesService,
+                                    private route : ActivatedRoute) {}
 
   // Run the function only in the browser
   browserOnly(f: () => void) {
@@ -114,12 +119,16 @@ imageSeries.mapImages.template.events.on("hit", (ev)=>{
   // console.log(ev.target.dataItem.dataContext)
   var dataMap = new mapData(ev.target.dataItem.dataContext);
   console.log(dataMap.title)
-  alert(dataMap.id+" "+dataMap.title+" "+dataMap.latitude+" "+dataMap.longitude)
+  // alert(dataMap.id+" "+dataMap.title+" "+dataMap.latitude+" "+dataMap.longitude)
 
   // ****************************
   // ADD ROUTIMG TO CUSTOMER TABLE HERE
   // dataMap.id --> id of the customer
   // dataMap.title --> name of the customer
+
+  
+
+
 
 
 
