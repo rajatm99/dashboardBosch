@@ -4,11 +4,14 @@
   max-height: 100%;
   display: inline-flex;
 
+  background-color: darkblue;
+
   /* overflow-x: hidden; */
 }
 
 #mapIn {
   visibility: collapse;
+  display: none !important;
 }
 
 #mapOut {
@@ -16,9 +19,9 @@
 }
 
 .deviceDiv {
-  height: 100% !important;
-  width: 35%;
-
+  min-height: 100% !important;
+  max-width: 30%;
+  padding-bottom: 2%;
   background-color: black;
 }
 
@@ -31,7 +34,6 @@
 .serviceChartDiv {
   min-height: 50% !important;
   max-height: 50%;
-  background-color: brown;
 }
 
 .kpiDiv {
@@ -44,9 +46,10 @@
 }
 
 .chartsDiv {
-  width: 100%;
+  width: 75%;
   height: auto;
   display: inline-block;
+  background-color: chartreuse;
 }
 
 .sales-testDiv {
