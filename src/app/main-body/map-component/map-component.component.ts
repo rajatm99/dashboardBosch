@@ -119,22 +119,19 @@ imageSeries.mapImages.template.events.on("hit", (ev)=>{
   // console.log(ev.target.dataItem.dataContext)
   var dataMap = new mapData(ev.target.dataItem.dataContext);
   console.log(dataMap.title)
-  var customerId =  dataMap.id
-  this.router.navigate(['/customers',customerId])
 
-  
-  // alert(dataMap.id+" "+dataMap.title+" "+dataMap.latitude+" "+dataMap.longitude)
+    // alert(dataMap.id+" "+dataMap.title+" "+dataMap.latitude+" "+dataMap.longitude)
 
   // ****************************
   // ADD ROUTIMG TO CUSTOMER TABLE HERE
   // dataMap.id --> id of the customer
   // dataMap.title --> name of the customer
 
-  
-
-
-
-
+  var customerId =  dataMap.id
+  this.router.navigate(['/customers',customerId])
+    .then(()=>{
+      window.location.reload()
+    })
 
 })
 

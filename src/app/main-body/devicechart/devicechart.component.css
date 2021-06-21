@@ -1,12 +1,12 @@
 #chartDiv {
   /* background-color: black; */
-  height: 100% !important;
+  height: 98% !important;
   width: 100%;
   padding-left: 1%;
 }
 
 #deviceChart {
-  height: 100% !important;
+  height: 90% !important;
   /* min-height: 90% !important; */
   background: rgba(255, 255, 255, 0.363);
 
