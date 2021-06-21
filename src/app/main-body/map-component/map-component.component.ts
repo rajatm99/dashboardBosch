@@ -146,7 +146,7 @@ function animateBullet(circle) {
     let animation = circle.animate([{ property: "scale", from: 3 / chart.zoomLevel, to: 3 / chart.zoomLevel }, { property: "opacity", from: 1, to: 0 }], 1000, am4core.ease.circleOut);
     animation.events.on("animationended", function(event){
       animateBullet(event.target.object);
-    })
+    }) 
 }
 
 let colorSet = new am4core.ColorSet();
