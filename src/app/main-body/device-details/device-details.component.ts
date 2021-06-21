@@ -44,12 +44,20 @@ export class DeviceDetailsComponent implements OnInit {
       
       this.chart = new Chart ('deviceChart',{
         options:{
+          legend:{
+            display:false
+          },
           scales:{
            yAxes:[{
             ticks:{
               beginAtZero:true,
               stepSize:1
-            }
+            },
+            scaleLabel: {
+              labelString: 'Test Conducted',
+              display: true,
+              fontColor: 'blue'
+            },
            }]
           }
         },
