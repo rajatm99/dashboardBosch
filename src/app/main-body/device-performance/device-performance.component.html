@@ -1,7 +1,13 @@
 
 <div class="chart">
-    <span>DeviceId : {{deviceId}}</span>
-    <button  class="close" (click)='close()'>X</button>
+       
+    <button  (click)='close()'>X</button>
+    <div class="data">
+        <div class="content">Device : {{deviceInfo.device}}</div>
+        <div class="content" >DeviceId : {{deviceId}}</div>
+      
+    </div>
+   
     <canvas id="testChart"></canvas>
    
 </div>

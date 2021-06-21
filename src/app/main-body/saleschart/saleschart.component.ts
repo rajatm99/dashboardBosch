@@ -309,6 +309,8 @@ export class SaleschartComponent implements OnInit {
       this.chart = new Chart('salesChart', {
       type: 'line',
         options:{
+          responsive: true,
+          // maintainAspectRatio: false,
           legend: {
             display: false
          }

@@ -41,6 +41,7 @@ export class DevicechartComponent implements OnInit {
 
 
       this.chart = new Chart('deviceChart', {
+        
         type: 'doughnut',
         data: {
           datasets: [{
@@ -65,6 +66,8 @@ export class DevicechartComponent implements OnInit {
           labels: this.chartLabel
         },
         options: {
+          responsive: true,
+          // maintainAspectRatio: false,
           //  ON CLICK EVENT
           onClick: this.chartClick.bind(this),
         }

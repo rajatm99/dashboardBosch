@@ -29,6 +29,7 @@
   display: flexbox;
   flex-direction: row;
   background-color: auto;
+  /* flex-wrap:wrap */
 }
 
 .chartsDiv {
@@ -52,53 +53,33 @@
   width: 50%;
   padding: 1%;
 }
-/* 
+
 @media only screen and (max-width: 768px) {
   .mainBodyDiv {
-    width: 100%;
-    display: inline-flex;
+    
+    display:flex;
+    flex-direction: column;
+  
   }
-
-  .kpiDiv {
-    width: 100%;
-    height: 14vh;
-  }
-
-  .chartsDiv {
-    width: 100%;
-    display: inline-block;
+  .deviceDiv{
     order: 2;
-  }
-
-  .sales-testDiv {
-    height: 30%;
     width: 100%;
+    display: block;
+    justify-content: center;
+  }
+  .sales-testDiv{
     display: flex;
+    flex-direction: column;
   }
-
-  .deviceDiv {
-
-    margin-top: 10px;
-    width: 35%;
-
-    padding-bottom: 0;
-    order: 1;
+  .salesChart{
+    width: 100%;
+    padding: 1%;
   }
-  .deviceChartDIV {
-    height: 50%;
+  .customerChart{
+    width: 100%;
+    padding: 1%;
   }
-  .serviceChartDiv {
-    height: 50%;
-    margin-bottom: 0;
+  .kpiDiv{
+    flex-wrap: wrap;
   }
-
-  .salesChart {
-    width: 50%;
-    padding: 4%;
-  }
-
-  .customerChart {
-    width: 50%;
-    padding: 4%;
-  }
-} */
+}

@@ -326,6 +326,7 @@
             "id":"d1-1",
             "customer":"customerA",
             "customerId":"c1",
+            "device":"deviceA",
             "deviceId":"d1",
             "expiry":"expired",
             "currentPackage":"packageA",
@@ -349,6 +350,7 @@
             "customer":"customerA",
             "customerId":"c1",
             "deviceId":"d2",
+            "device":"deviceB",
             "expiry":"10dec2021",
             "currentPackage":"packageB",
             "data":[
@@ -371,6 +373,7 @@
             "customer":"customerB",
             "customerId":"c1",
             "deviceId":"d2",
+            "device":"deviceB",
             "expiry":"24Sep2021",
             "currentPackage":"packageD",
             "data":[
@@ -393,6 +396,7 @@
             "customer":"customerC",
             "customerId":"c3",
             "deviceId":"d2",
+            "device":"deviceB",
             "expiry":"expired",
             "currentPackage":"packageA",
             "data":[
@@ -415,6 +419,7 @@
             "customer":"customerD",
             "customerId":"c4",
             "deviceId":"d1",
+            "device":"deviceA",
             "expiry":"expired",
             "currentPackage":"packageC",
             "data":[
@@ -437,6 +442,7 @@
             "customer":"customerD",
             "customerId":"c4",
             "deviceId":"d1",
+            "device":"deviceA",
             "expiry":"15Aug2021",
             "currentPackage":"packageB",
             "data":[
@@ -459,6 +465,7 @@
             "customer":"customerA",
             "customerId":"c1",
             "deviceId":"d3",
+            "device":"deviceC",
             "expiry":"expired",
             "currentPackage":"packageA",
             "data":[
@@ -481,6 +488,7 @@
             "customer":"customerA",
             "customerId":"c1",
             "deviceId":"d3",
+            "device":"deviceC",
             "expiry":"expired",
             "currentPackage":"packageA",
             "data":[
@@ -503,6 +511,7 @@
             "customer":"customerB",
             "customerId":"c2",
             "deviceId":"d3",
+            "device":"deviceC",
             "expiry":"expired",
             "currentPackage":"packageA",
             "data":[
@@ -525,6 +534,7 @@
             "customer":"customerB",
             "customerId":"c2",
             "deviceId":"d3",
+            "device":"deviceC",
             "expiry":"expired",
             "currentPackage":"packageA",
             "data":[
@@ -547,6 +557,7 @@
             "customer":"customerB",
             "customerId":"c2",
             "deviceId":"d4",
+            "device":"deviceD",
             "expiry":"expired",
             "currentPackage":"packageA",
             "data":[
@@ -569,6 +580,7 @@
             "customer":"customerC",
             "customerId":"c3",
             "deviceId":"d4",
+            "device":"deviceD",
             "expiry":"expired",
             "currentPackage":"packageA",
             "data":[

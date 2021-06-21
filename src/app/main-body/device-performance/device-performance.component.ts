@@ -12,6 +12,7 @@ export class DevicePerformanceComponent implements OnInit {
   public deviceId;
   public deviceData;
   public chart: any
+  public deviceInfo;
 
   constructor(
     public dialogRef: MatDialogRef<DevicePerformanceComponent>,
@@ -31,6 +32,8 @@ export class DevicePerformanceComponent implements OnInit {
 
   initializeChart() {
     this.deviceTestService.getDeviceData(this.deviceId).subscribe((data: any) => {
+      console.log(data);
+      this.deviceInfo=data
       this.deviceData = this.deviceTestService.createTestChartData(data)
       console.log(this.deviceData);
       this.chart = new Chart('testChart', {
@@ -38,12 +41,20 @@ export class DevicePerformanceComponent implements OnInit {
         data: {
           labels: this.deviceData.labels.slice(-12),
           datasets: [{
-            label: 'My First Dataset',
+            label: 'Test Conducted',
             data: this.deviceData.testData.slice(-12),
             fill: false,
             borderColor: 'rgb(75, 192, 192)',
-            lineTension: 0.1
+            lineTension: 0
           }]
+        
+        },
+        options:{
+          responsive: true,
+          maintainAspectRatio: false,
+          legend: {
+            display: false
+          }
         }
       })
 
