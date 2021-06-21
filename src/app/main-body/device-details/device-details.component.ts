@@ -54,7 +54,7 @@ export class DeviceDetailsComponent implements OnInit {
               stepSize:1
             },
             scaleLabel: {
-              labelString: 'Test Conducted',
+              labelString: 'Number of Device',
               display: true,
               fontColor: 'blue'
             },
@@ -79,7 +79,7 @@ export class DeviceDetailsComponent implements OnInit {
   }
   
   getCustomer(id){
-  this.router.navigate(['customer/',id],{relativeTo:this.route})
+  // this.router.navigate(['customer/',id],{relativeTo:this.route})
   
 }
 
