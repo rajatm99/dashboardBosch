@@ -310,10 +310,14 @@ export class SaleschartComponent implements OnInit {
       type: 'line',
         options:{
           responsive: true,
-          // maintainAspectRatio: false,
+          maintainAspectRatio: true,
           legend: {
             display: false
-         }
+         },
+         title: {
+          display: false,
+          text: 'Customer and Sales'
+        }
         },
         data: {
           datasets: [{

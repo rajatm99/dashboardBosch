@@ -1,16 +1,20 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div id="saleDiv">
 
+    <div id="title">
+        Package Sales Details
+    </div>
+
     <div class="filterDiv">
         <div class="filterButton">
-            <button (click)="setTime(week)">week</button>
+            <button (click)="setTime(week)">Week</button>
             <button (click)="setTime(month)">Month</button>
             <button (click)="setTime(year)">Year</button>
         </div>
     
         <div class="filterTab ">
             <form>
-                <select (change)="packageClick($event.target.value)">
+                <select id="dropdown" (change)="packageClick($event.target.value)">
                     <option value="All Package"> All Package</option>
                     <option  *ngFor="let package of packageList" 
                             value={{package}}>
@@ -19,23 +23,18 @@
                 </select>
             </form>
         </div>
-        <div class="filterButton">
-            <button (click)="timeSpanLess()">Prev.</button>
-            <button (click)="timeSpanMore()">Next</button>
-        </div>
-        <!-- <div class="filterTab">
-            <form>
-                <select>
-                    <option value="alldevice"> All Device</option>
-                </select>
-            </form>
-    
-        </div> -->
+        
     </div>
 
 
 <div id="chartDiv">
-    <canvas id="salesChart"></canvas>
+    <canvas id="salesChart" style="max-height: 55%;"></canvas>
 </div>
+
+<div id="nextPrev" class="filterButton">
+            <button id="nextPrevId" (click)="timeSpanLess()"> &#5130; </button>
+            <button id="nextPrevId" (click)="timeSpanMore()">&#5125; </button>
+</div> 
+        
 
 </div>

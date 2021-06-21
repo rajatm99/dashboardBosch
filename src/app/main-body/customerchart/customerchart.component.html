@@ -3,12 +3,19 @@
 
 <div id="chartDiv" >  
 
-    <button (click)='sortByDevice()'>device</button>
-    <button (click)='sortByTest()'>test conducted</button>
-  
-    <a routerLink="customers">
-       <i class="fa fa-bars"></i>
+    <div id="title">
+        Customer and Test Details
+    </div>
+
+    <a routerLink="customers" id="barsIcon">
+        <i class="fa fa-bars"></i>
     </a>
-    <canvas id="customerChart" ></canvas>
+
+        <button (click)='sortByDevice()'>Device</button>
+        <button (click)='sortByTest()'>Test conducted</button>
+  
+        
+        <canvas id="customerChart" style="margin-bottom: 10%;  max-height: 90%;" ></canvas>
     
+
 </div>
