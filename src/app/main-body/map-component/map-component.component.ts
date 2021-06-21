@@ -10,7 +10,7 @@ import am4geodata_worldLow from "@amcharts/amcharts4-geodata/worldLow";
 import am4themes_dataviz from "@amcharts/amcharts4/themes/dataviz";
 import { title } from 'process';
 
-import { SalesService } from '../services/sales.service'
+import { SalesService } from '../../services/sales.service'
 import {Router,ActivatedRoute} from '@angular/router'
 
 /* Chart code */
@@ -119,6 +119,10 @@ imageSeries.mapImages.template.events.on("hit", (ev)=>{
   // console.log(ev.target.dataItem.dataContext)
   var dataMap = new mapData(ev.target.dataItem.dataContext);
   console.log(dataMap.title)
+  var customerId =  dataMap.id
+  this.router.navigate(['/customers',customerId])
+
+  
   // alert(dataMap.id+" "+dataMap.title+" "+dataMap.latitude+" "+dataMap.longitude)
 
   // ****************************

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DevicetestService } from '../../services/devicetest.service'
 import {Router} from '@angular/router'
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-customertable',
@@ -11,7 +12,8 @@ export class CustomertableComponent implements OnInit {
   dataset: any
   constructor(
     private deviceTestService: DevicetestService,
-    private router:Router) {}
+    private router:Router,
+    private route:ActivatedRoute) {}
 
   ngOnInit(): void {
     this.createTableData()
@@ -25,6 +27,6 @@ createTableData(){
   
 }
 showCustomer(customerId){
-this.router.navigate(['/customers',customerId]);
+this.router.navigate(['customers',customerId],);
 }
 }
