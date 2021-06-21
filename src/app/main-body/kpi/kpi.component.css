@@ -24,10 +24,21 @@
 
 .subscriptionButton {
   min-width: 22%;
-  margin: 5px;
+  margin: 1%;
   background-color: white;
   padding: 2%;
   align-items: center;
+  font-size: 10px;
+
+  border-width: 1px;
+  border-radius: 8%;
+  box-shadow: blue;
+}
+
+.subscriptionButton span {
+  top: 2px;
+  font-weight: bold;
+  font-size: 12px;
 }
 
 .subscriptionButtonBar {
@@ -85,13 +96,32 @@
   margin-bottom: 20%;
 
   /* background-color: red; */
-  font-size: 25px;
+  font-size: 17px;
   font-weight: 300;
 }
 
 .kpiheader {
   margin-top: 4%;
   margin-bottom: -10%;
+
+  font-size: 11px;
+}
+
+@media only screen and (max-width: 400px) {
+  .container {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+
+  .kpiblock {
+    height: 50%;
+    width: 25vw;
+  }
+
+  #subscription {
+    width: 50vw;
+    grid-area: 2/2 / span 1 / span 2;
+  }
 }
 @media only screen and (max-width: 768px) {
   .container {

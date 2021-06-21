@@ -1,36 +1,38 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div id="saleDiv">
-<div class="filterDiv">
-    <div class="filterButton">
-        <button (click)="setTime(week)">week</button>
-        <button (click)="setTime(month)">Month</button>
-        <button (click)="setTime(year)">Year</button>
+
+    <div class="filterDiv">
+        <div class="filterButton">
+            <button (click)="setTime(week)">week</button>
+            <button (click)="setTime(month)">Month</button>
+            <button (click)="setTime(year)">Year</button>
+        </div>
+    
+        <div class="filterTab ">
+            <form>
+                <select (change)="packageClick($event.target.value)">
+                    <option value="All Package"> All Package</option>
+                    <option  *ngFor="let package of packageList" 
+                            value={{package}}>
+                                {{package}}
+                    </option>
+                </select>
+            </form>
+        </div>
+        <div class="filterButton">
+            <button (click)="timeSpanLess()">Prev.</button>
+            <button (click)="timeSpanMore()">Next</button>
+        </div>
+        <!-- <div class="filterTab">
+            <form>
+                <select>
+                    <option value="alldevice"> All Device</option>
+                </select>
+            </form>
+    
+        </div> -->
     </div>
 
-    <div class="filterTab ">
-        <form>
-            <select (change)="packageClick($event.target.value)">
-                <option value="All Package"> All Package</option>
-                <option  *ngFor="let package of packageList" 
-                        value={{package}}>
-                            {{package}}
-                </option>
-            </select>
-        </form>
-    </div>
-    <!-- <div class="filterTab">
-        <form>
-            <select>
-                <option value="alldevice"> All Device</option>
-            </select>
-        </form>
-
-    </div> -->
-</div>
-
-<div class="filterButton">
-    <button (click)="timeSpanLess()">Prev.</button>
-    <button (click)="timeSpanMore()">Next</button>
-</div>
 
 <div id="chartDiv">
     <canvas id="salesChart"></canvas>

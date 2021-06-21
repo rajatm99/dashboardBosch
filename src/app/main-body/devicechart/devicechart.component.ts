@@ -70,6 +70,10 @@ export class DevicechartComponent implements OnInit {
           // maintainAspectRatio: false,
           //  ON CLICK EVENT
           onClick: this.chartClick.bind(this),
+          legend: {
+            position: 'right',
+            align:"center"
+         }
         }
 
       })
