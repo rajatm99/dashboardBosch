@@ -1,5 +1,77 @@
 
-<h4>DETAILS OF {{deviceName}} </h4>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <div class="details">
+            <div class="profile-image">
+                <img src="../../../assets/device.png">
+            </div>
+            <div class="line-s"></div>
+            <div class="details-1">
+                <div class="content">Device : {{deviceName}}</div>
+                <div class="content">Device Id : {{deviceId}}</div>
+                <div class="content">Total Device : {{totalDevice}} </div>
+            </div>
+            
+        </div>
+        <div class="line-s"></div>
+        <div class="line"></div>
+        <div class="table-graph">
+            <div class="table">
+                <table id="device">
+                    <tbody>
+                        <tr>
+                            <th>Id</th>
+                            <th>Customer Name</th>
+                        </tr>
+                        <tr *ngFor='let customer of customerList'>
+                            <td (click)='getCustomer(customer.customerId)'>{{customer.customerId}}</td>
+                            <td  (click)='getCustomer(customer.customerId)'>{{customer.customerName}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="graph">
+                <canvas  id="deviceChart"></canvas>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h4>DETAILS OF {{deviceName}} </h4>
 <p>Total device {{totalDevice}}</p>
 <div id="container">
     <div id="customerTable">
@@ -17,6 +89,6 @@
     <div id="chartDiv">
         <canvas  id="deviceChart"></canvas>
     </div> 
-</div>
+</div> -->
 
 

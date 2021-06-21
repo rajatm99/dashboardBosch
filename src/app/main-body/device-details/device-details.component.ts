@@ -44,12 +44,20 @@ export class DeviceDetailsComponent implements OnInit {
       
       this.chart = new Chart ('deviceChart',{
         options:{
+          legend:{
+            display:false
+          },
           scales:{
            yAxes:[{
             ticks:{
               beginAtZero:true,
               stepSize:1
-            }
+            },
+            scaleLabel: {
+              labelString: 'Number of Device',
+              display: true,
+              fontColor: 'blue'
+            },
            }]
           }
         },
@@ -71,7 +79,7 @@ export class DeviceDetailsComponent implements OnInit {
   }
   
   getCustomer(id){
-  this.router.navigate(['customer/',id],{relativeTo:this.route})
+  // this.router.navigate(['customer/',id],{relativeTo:this.route})
   
 }
 

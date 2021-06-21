@@ -9,12 +9,19 @@ button{
     float: right;
 }
 .data{
-    padding: 10px;
+    padding: 5px;
     color: blue;
     
     
 }
 .content{
 padding: 3px;
-;
+
+}
+#head{
+    text-align: center;
+    font-size: 20px;
+    margin-top: 2px;
+    font-weight: bold;
+    color: darkblue;
 }
