@@ -22,10 +22,18 @@
 }
 
 #chartdiv {
-  min-width: 70vw;
+  min-width: 100%;
   height: 30vmax;
   align-self: center;
   margin-left: auto;
   margin-right: auto;
-  background-color: #007599;
+ 
+}
+
+
+@media only screen and (max-width: 1100px){
+  .mapMain{
+    
+    margin-left: 2%;
+  }
 }

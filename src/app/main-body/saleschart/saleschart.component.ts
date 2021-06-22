@@ -310,7 +310,7 @@ export class SaleschartComponent implements OnInit {
       type: 'line',
         options:{
           responsive: true,
-          maintainAspectRatio: true,
+          maintainAspectRatio: false,
           legend: {
             display: false
          },
