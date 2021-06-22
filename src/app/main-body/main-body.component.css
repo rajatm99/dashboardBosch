@@ -7,6 +7,7 @@
   grid-template-columns: 27% 73%;
   grid-template-rows: 30vw 30vw;
 
+
   /* overflow-x: hidden; */
 }
 
@@ -24,6 +25,7 @@
   min-height: 100% !important;
   width: 100%;
   padding-bottom: 2%;
+  padding-left: 2%;
 }
 
 .deviceChartDIV {
@@ -46,11 +48,14 @@
 }
 
 .chartsDiv {
-  width: 100%;
+  width: 99%;
   height: auto;
   display: inline-block;
 
   padding-bottom: 0%;
+  padding-left: 1%;
+  padding-right: 1%;
+
 }
 
 .sales-testDiv {
