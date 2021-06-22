@@ -77,12 +77,34 @@
   .mainBodyDiv {
     /* background-color: blue; */
     padding-top: 0%;
+    grid-row-gap: 3%;
+    grid-template-columns: 35% 65%;
+    
+    
   }
 
   .chartsDiv {
     width: 100%;
     margin-top: 0%;
     grid-area: 1 / 1 / span 1 / span 2;
+  }
+
+  .deviceDiv{
+    height: 60vh;
+    margin-left: 4%;
+    width: 100%;
+
+  }
+
+  .deviceChartDIV{
+    min-height:50%;
+
+
+  }
+
+  .serviceChartDiv{
+    min-height: 50% !important;
+
   }
 
   #mapIn {
@@ -97,6 +119,9 @@
 
   .mapComponent {
     grid-area: 2 / 2;
+    margin-left: 2%;
+    max-width: 100%;
+    max-height: 60vh;
   }
 }
 

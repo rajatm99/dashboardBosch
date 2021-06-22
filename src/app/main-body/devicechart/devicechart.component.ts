@@ -66,8 +66,8 @@ export class DevicechartComponent implements OnInit {
           labels: this.chartLabel
         },
         options: {
-          responsive: true,
-          // maintainAspectRatio: false,
+          responsive: false,
+          maintainAspectRatio: false,
           //  ON CLICK EVENT
           onClick: this.chartClick.bind(this),
           legend: {

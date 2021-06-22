@@ -91,14 +91,16 @@ imageSeries.mapImages.template.propertyFields.latitude = "latitude";
 imageSeries.mapImages.template.tooltipText = "{title}";
 imageSeries.mapImages.template.propertyFields.url = "url";
 
-let circle = imageSeries.mapImages.template.createChild(am4core.Circle);
-circle.radius = 3;
-circle.propertyFields.fill = "color";
-circle.nonScaling = true;
 
-let circle2 = imageSeries.mapImages.template.createChild(am4core.Circle);
-circle2.radius = 3;
-circle2.propertyFields.fill = "color";
+
+let marker = imageSeries.mapImages.template.createChild(am4core.Image);
+marker.href = "../assets/MARKER.png"
+marker.width = 20;
+marker.height = 20;
+marker.nonScaling = true;
+marker.tooltipText = "{title}";
+marker.horizontalCenter = "middle";
+marker.verticalCenter = "bottom";
 
 class mapData {
   latitude: string;
@@ -137,13 +139,13 @@ imageSeries.mapImages.template.events.on("hit", (ev)=>{
 
 
 
-circle2.events.on("inited", function(event){
+marker.events.on("inited", function(event){
   animateBullet(event.target);
 })
 
 
 function animateBullet(circle) {
-    let animation = circle.animate([{ property: "scale", from: 3 / chart.zoomLevel, to: 3 / chart.zoomLevel }, { property: "opacity", from: 1, to: 0 }], 1000, am4core.ease.circleOut);
+    let animation = circle.animate([{ property: "scale", from: 3 / chart.zoomLevel, to: 3 / chart.zoomLevel }, { property: "opacity", from: 1, to: 1 }], 1000, am4core.ease.circleOut);
     animation.events.on("animationended", function(event){
       animateBullet(event.target.object);
     }) 
