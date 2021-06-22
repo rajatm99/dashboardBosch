@@ -65,7 +65,7 @@ table,tr,td,th{
 }
 .graph{
     width: 90%;
-    height: 50vw;
+    height: 58vw;
     background: rgba(255, 255, 255, 0.363);
     /* padding: 5px; */
     box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
@@ -81,6 +81,14 @@ th{
       background-color:#2ba6f1;
       color: white;
     }
+#head{
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: bold;
+    color: darkblue;
+    font-size: 1.2em;
+}
 
 @media only screen and (min-width: 768px) {
     .details{
@@ -137,7 +145,7 @@ th{
     .graph{
         height:20vw;
         width: 80vw;
-        padding: 1%;
+        padding: 3%;
        
        
     }
