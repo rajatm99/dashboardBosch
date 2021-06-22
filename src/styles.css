@@ -8,7 +8,7 @@ body {
   width: calc(100vw - (100vw - 100%));
   overflow-x: hidden;
   resize: horizontal;
-  background-color: rgba(235, 236, 243, 0.137);
+  background-color: rgb(255, 255, 255);
 }
 body {
   margin: 0;

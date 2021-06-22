@@ -65,7 +65,7 @@
   border-width: 1px;
   border-color: #f0f0f0;
   background: rgba(255, 255, 255, 0.363);
-
+ 
   margin-right: 0.5%;
   margin-left: 0.5%;
 
@@ -81,29 +81,28 @@
   align-items: center;
   align-content: center;
   text-align: center;
+
+  position: relative;
 }
 .kpidata {
   min-width: 100%;
-  min-height: auto;
-  display: inline-block;
-  vertical-align: middle;
-  text-align: center;
-  padding: 3px;
+  height: 69%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 
-  text-align: center;
-  margin-top: 20%;
-  margin-bottom: 20%;
+  color: #305697;
 
-  /* background-color: red; */
-  font-size: 17px;
-  font-weight: 300;
+  font-size: 140%;
+  font-weight: bolder;
 }
 
 .kpiheader {
   margin-top: 4%;
   margin-bottom: -10%;
-
+  height: 30%;
   font-size: 11px;
+  color: #000000;
 }
 
 @media only screen and (max-width: 400px) {
