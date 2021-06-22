@@ -190,14 +190,14 @@ export class SaleschartComponent implements OnInit {
                       label.push("")
                     }             
                     if(!dict[x.sale[i].year]){               
-                      dict[x.sale[i].year+week]=temp
+                      dict[x.sale[i].year+this.months[j]+week]=temp
                     }else{
                       dict[x.sale[i].year+week]+=temp
                     }
                     temp=0
                     week++
                   }
-                
+                  week=0
                 }
         
               }
@@ -207,6 +207,17 @@ export class SaleschartComponent implements OnInit {
              
       }
       console.log(dict)
+
+      if(this.pack=="All Package"){
+        var tempLabel = Object.keys(dict)
+        tempLabel.forEach(i =>{
+            console.log(i)
+        })
+       
+         
+      }
+
+      
       
       // label=Object.keys(dict)
       data=Object.values(dict)   
