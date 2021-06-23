@@ -8,7 +8,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## API server
 
-We have two API server one for each team member.You have to enable both server for proper working. You can make server up using `npm run server:abhishek` and `npm run server:rajat`
+We have two API server one for each team member.You have to enable both server for proper working. You can up the server using `npm run server:abhishek` and `npm run server:rajat`
 
 ## Install node_modules
 
