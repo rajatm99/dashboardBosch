@@ -81,14 +81,18 @@ th{
       background-color:#2ba6f1;
       color: white;
     }
-#head{
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 0;
-    font-weight: bold;
-    color: darkblue;
-    font-size: 1.2em;
-}
+    #head{
+        font-size:1.2em;
+        font-variant-caps: all-small-caps;
+        font-weight: bolder;
+        align-self: center;
+        width: 100%;
+        text-align: center;
+        color: rgb(86, 57, 214);
+        margin-bottom: -1px;
+        margin-top: -10px;
+
+      }
 
 @media only screen and (min-width: 768px) {
     .details{
@@ -145,7 +149,7 @@ th{
     .graph{
         height:20vw;
         width: 80vw;
-        padding: 3%;
+        padding: 2%;
        
        
     }

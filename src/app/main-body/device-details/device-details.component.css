@@ -85,6 +85,17 @@ th{
   #device{
     width: 85vw;
   }
+  #head{
+    font-size: 1.2em;
+    font-variant-caps: all-small-caps;
+    font-weight: bolder;
+    align-self: center;
+    width: 100%;
+    text-align: center;
+    color: rgb(86, 57, 214);
+    margin-bottom: -1px;
+    margin-top: 0;
+  }
 @media only screen and (min-width: 768px) {
   .details{
       display: flex;
@@ -125,7 +136,7 @@ th{
       /* height:25vw; */
       /* overflow-y: scroll; */
      margin-right: 0;
-      padding: 1px;
+      padding: 3%;
       margin: 4%;
       margin-right: 0;
       /* margin-left:10%; */
